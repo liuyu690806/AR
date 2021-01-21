@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainscence</class>
+ <widget class="QMainWindow" name="mainscence">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="lab_title">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>0</y>
+      <width>321</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget_left" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>111</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QTreeWidget" name="treeWidget">
+       <column>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </column>
+       <item>
+        <property name="text">
+         <string>系统信息管理</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>个人信息</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>用户管理</string>
+         </property>
+        </item>
+       </item>
+       <item>
+        <property name="text">
+         <string>标记信息管理</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>示教视频管理</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>视频查询</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>视频剪辑</string>
+         </property>
+        </item>
+       </item>
+       <item>
+        <property name="text">
+         <string>维修标记</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_recent">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="text">
+        <string>最近维修视频</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="listWidget">
+       <item>
+        <property name="text">
+         <string>减速器维修             2020.12.21</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>发射单元维修          2020.12.30</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionvedio"/>
+    <addaction name="separator"/>
+    <addaction name="actionsave"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionrizhi"/>
+    <addaction name="separator"/>
+    <addaction name="actionclose"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="actioncontact"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionvedio">
+   <property name="text">
+    <string>打开视频</string>
+   </property>
+  </action>
+  <action name="actionsave">
+   <property name="text">
+    <string>保存所有文件</string>
+   </property>
+  </action>
+  <action name="actionclose">
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="actioncontact">
+   <property name="text">
+    <string>联系我们</string>
+   </property>
+  </action>
+  <action name="actionrizhi">
+   <property name="text">
+    <string>日志</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
