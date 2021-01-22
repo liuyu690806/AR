@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui multimedia multimediawidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -33,7 +33,8 @@ SOURCES += \
     mask_management.cpp \
     vedio_query.cpp \
     personal_inf.cpp \
-    user_management.cpp
+    user_management.cpp \
+    playerslider.cpp
 
 HEADERS += \
         sign_in.h \
@@ -43,7 +44,8 @@ HEADERS += \
     mask_management.h \
     vedio_query.h \
     personal_inf.h \
-    user_management.h
+    user_management.h \
+    playerslider.h
 
 FORMS += \
         sign_in.ui \

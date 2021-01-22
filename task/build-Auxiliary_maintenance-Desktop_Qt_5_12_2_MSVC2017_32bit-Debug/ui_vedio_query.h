@@ -13,36 +13,39 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QOpenGLWidget>
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
+#include <playerslider.h>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_vedio_query
 {
 public:
-    QOpenGLWidget *openGLWidget;
     QPushButton *pushButton;
     QTableWidget *tableWidget;
     QGroupBox *groupBox;
     QGridLayout *gridLayout;
     QPlainTextEdit *plainTextEdit;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *openBtn;
+    QPushButton *stopBtn;
+    QPushButton *play_pauseBtn;
+    PlayerSlider *Slider1;
 
     void setupUi(QWidget *vedio_query)
     {
         if (vedio_query->objectName().isEmpty())
             vedio_query->setObjectName(QString::fromUtf8("vedio_query"));
-        vedio_query->resize(400, 300);
-        openGLWidget = new QOpenGLWidget(vedio_query);
-        openGLWidget->setObjectName(QString::fromUtf8("openGLWidget"));
-        openGLWidget->setGeometry(QRect(-20, 10, 211, 200));
+        vedio_query->resize(456, 313);
         pushButton = new QPushButton(vedio_query);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(240, 130, 80, 16));
+        pushButton->setGeometry(QRect(250, 140, 80, 16));
         QFont font;
         font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font.setPointSize(11);
@@ -78,7 +81,7 @@ public:
         tableWidget->setGeometry(QRect(210, 170, 179, 99));
         groupBox = new QGroupBox(vedio_query);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(313, 97, 171, 141));
+        groupBox->setGeometry(QRect(210, -10, 171, 141));
         groupBox->setFont(font);
         gridLayout = new QGridLayout(groupBox);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
@@ -86,6 +89,37 @@ public:
         plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
 
         gridLayout->addWidget(plainTextEdit, 0, 0, 1, 1);
+
+        widget = new QWidget(vedio_query);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(30, 280, 348, 27));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(widget->sizePolicy().hasHeightForWidth());
+        widget->setSizePolicy(sizePolicy);
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        openBtn = new QPushButton(widget);
+        openBtn->setObjectName(QString::fromUtf8("openBtn"));
+
+        horizontalLayout->addWidget(openBtn);
+
+        stopBtn = new QPushButton(widget);
+        stopBtn->setObjectName(QString::fromUtf8("stopBtn"));
+
+        horizontalLayout->addWidget(stopBtn);
+
+        play_pauseBtn = new QPushButton(widget);
+        play_pauseBtn->setObjectName(QString::fromUtf8("play_pauseBtn"));
+
+        horizontalLayout->addWidget(play_pauseBtn);
+
+        Slider1 = new PlayerSlider(widget);
+        Slider1->setObjectName(QString::fromUtf8("Slider1"));
+        Slider1->setOrientation(Qt::Horizontal);
+
+        horizontalLayout->addWidget(Slider1);
 
 
         retranslateUi(vedio_query);
@@ -121,6 +155,9 @@ public:
         tableWidget->setSortingEnabled(__sortingEnabled);
 
         groupBox->setTitle(QApplication::translate("vedio_query", "\350\247\206\351\242\221\346\246\202\350\277\260", nullptr));
+        openBtn->setText(QApplication::translate("vedio_query", "\346\211\223\345\274\200", nullptr));
+        stopBtn->setText(QApplication::translate("vedio_query", "\345\201\234\346\255\242", nullptr));
+        play_pauseBtn->setText(QApplication::translate("vedio_query", "\346\222\255\346\224\276", nullptr));
     } // retranslateUi
 
 };

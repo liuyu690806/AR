@@ -266,8 +266,11 @@ Makefile: ..\Auxiliary_maintenance\Auxiliary_maintenance.pro ..\..\..\Qt\5.12.2\
 		..\..\..\Qt\5.12.2\msvc2017\mkspecs\features\yacc.prf \
 		..\..\..\Qt\5.12.2\msvc2017\mkspecs\features\lex.prf \
 		..\Auxiliary_maintenance\Auxiliary_maintenance.pro \
+		..\..\..\Qt\5.12.2\msvc2017\lib\Qt5MultimediaWidgets.prl \
+		..\..\..\Qt\5.12.2\msvc2017\lib\Qt5Multimedia.prl \
 		..\..\..\Qt\5.12.2\msvc2017\lib\Qt5Widgets.prl \
 		..\..\..\Qt\5.12.2\msvc2017\lib\Qt5Gui.prl \
+		..\..\..\Qt\5.12.2\msvc2017\lib\Qt5Network.prl \
 		..\..\..\Qt\5.12.2\msvc2017\lib\Qt5Core.prl \
 		..\..\..\Qt\5.12.2\msvc2017\lib\qtmaind.prl
 	$(QMAKE) -o Makefile ..\Auxiliary_maintenance\Auxiliary_maintenance.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -460,8 +463,11 @@ Makefile: ..\Auxiliary_maintenance\Auxiliary_maintenance.pro ..\..\..\Qt\5.12.2\
 ..\..\..\Qt\5.12.2\msvc2017\mkspecs\features\yacc.prf:
 ..\..\..\Qt\5.12.2\msvc2017\mkspecs\features\lex.prf:
 ..\Auxiliary_maintenance\Auxiliary_maintenance.pro:
+..\..\..\Qt\5.12.2\msvc2017\lib\Qt5MultimediaWidgets.prl:
+..\..\..\Qt\5.12.2\msvc2017\lib\Qt5Multimedia.prl:
 ..\..\..\Qt\5.12.2\msvc2017\lib\Qt5Widgets.prl:
 ..\..\..\Qt\5.12.2\msvc2017\lib\Qt5Gui.prl:
+..\..\..\Qt\5.12.2\msvc2017\lib\Qt5Network.prl:
 ..\..\..\Qt\5.12.2\msvc2017\lib\Qt5Core.prl:
 ..\..\..\Qt\5.12.2\msvc2017\lib\qtmaind.prl:
 qmake: FORCE
