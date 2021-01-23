@@ -20,29 +20,42 @@ vedio_query::vedio_query(QWidget *parent) :
     //进度条
     ui->widget->move(0,815);
     ui->widget->setFixedSize(1080,50);
-    ui->play_pauseBtn->setFixedHeight(40);
-    ui->openBtn->setFixedHeight(40);
-    ui->stopBtn->setFixedHeight(40);
+    ui->play_pauseBtn->setFixedHeight(35);
+    ui->openBtn->setFixedHeight(35);
+    ui->stopBtn->setFixedHeight(35);
 
     //视频概述
     ui->groupBox->move(1150,5);
-    ui->groupBox->setFixedSize(400,360);
+    ui->groupBox->setFixedSize(400,200);
     //按钮
-    ui->pushButton->move(1270,390);
+    ui->pushButton->move(1270,220);
     ui->pushButton->setFixedSize(160,40);
 
     //数据库区
-    ui->tableWidget->move(1150,450);
-    ui->tableWidget->setFixedSize(400,360);
+    ui->tableWidget->move(1150,280);
+    ui->tableWidget->setFixedSize(400,160);
+    //视频关系树
+    ui->treeWidget->move(1150,440);
+    ui->treeWidget->setFixedSize(400,420);
+    ui->treeWidget->setHeaderLabels(QStringList()<<"维修项目");
+    ui->treeWidget->setFont(QFont("微软雅黑",10,QFont::Bold));
+    ui->treeWidget->setStyleSheet("QHeaderView::section{ color:white;  height:35px;  background-color:rgb(0,0,0,200);}"
+                                   "QTreeView::item:hover{background-color:rgb(200,200,200,120);}"
+                                   "QTreeView::item:selected{background: #1E90FF;}"
+                                   "QTreeView::item{margin:5px;}"
+                                   "QTreeView{background-color:rgb(200,200,200,100);}");
+
 
     //视频设置
+
     player = new QMediaPlayer;
     Playlist = new QMediaPlaylist;
     player->setPlaylist(Playlist);
     videowidget = new QVideoWidget(this);
     player->setVideoOutput(videowidget);
-    videowidget->resize(1080,810);
     videowidget->move(0,5);
+    videowidget->setFixedSize(1080,810);
+    //videowidget->move(0,5);
 
     videowidget->setAutoFillBackground(true);
     QPalette qplte;

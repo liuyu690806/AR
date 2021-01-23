@@ -55,17 +55,17 @@
    </row>
    <column>
     <property name="text">
-     <string>视频文件</string>
+     <string>维修项目</string>
     </property>
    </column>
    <column>
     <property name="text">
-     <string>保存路径</string>
+     <string>部件1</string>
     </property>
    </column>
    <column>
     <property name="text">
-     <string>视频时长</string>
+     <string>视频1</string>
     </property>
    </column>
    <column>
@@ -80,7 +80,7 @@
    </item>
    <item row="0" column="1">
     <property name="text">
-     <string>D:\liuyu\task</string>
+     <string>底座</string>
     </property>
    </item>
    <item row="0" column="2">
@@ -165,6 +165,51 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QTreeWidget" name="treeWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>141</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </column>
+   <item>
+    <property name="text">
+     <string>减速器</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>部件1</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>视频1</string>
+      </property>
+     </item>
+    </item>
+    <item>
+     <property name="text">
+      <string>部件2</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>视频2</string>
+      </property>
+     </item>
+    </item>
+    <item>
+     <property name="text">
+      <string>部件安装视频</string>
+     </property>
+    </item>
+   </item>
   </widget>
  </widget>
  <customwidgets>

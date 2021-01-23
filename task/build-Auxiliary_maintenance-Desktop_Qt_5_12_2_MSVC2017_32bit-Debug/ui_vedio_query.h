@@ -18,6 +18,7 @@
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QWidget>
 #include <playerslider.h>
 
@@ -37,6 +38,7 @@ public:
     QPushButton *stopBtn;
     QPushButton *play_pauseBtn;
     PlayerSlider *Slider1;
+    QTreeWidget *treeWidget;
 
     void setupUi(QWidget *vedio_query)
     {
@@ -121,6 +123,15 @@ public:
 
         horizontalLayout->addWidget(Slider1);
 
+        treeWidget = new QTreeWidget(vedio_query);
+        QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem(treeWidget);
+        QTreeWidgetItem *__qtreewidgetitem1 = new QTreeWidgetItem(__qtreewidgetitem);
+        new QTreeWidgetItem(__qtreewidgetitem1);
+        QTreeWidgetItem *__qtreewidgetitem2 = new QTreeWidgetItem(__qtreewidgetitem);
+        new QTreeWidgetItem(__qtreewidgetitem2);
+        new QTreeWidgetItem(__qtreewidgetitem);
+        treeWidget->setObjectName(QString::fromUtf8("treeWidget"));
+        treeWidget->setGeometry(QRect(20, 60, 141, 71));
 
         retranslateUi(vedio_query);
 
@@ -132,11 +143,11 @@ public:
         vedio_query->setWindowTitle(QApplication::translate("vedio_query", "Form", nullptr));
         pushButton->setText(QApplication::translate("vedio_query", "\347\241\256\345\256\232", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("vedio_query", "\350\247\206\351\242\221\346\226\207\344\273\266", nullptr));
+        ___qtablewidgetitem->setText(QApplication::translate("vedio_query", "\347\273\264\344\277\256\351\241\271\347\233\256", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("vedio_query", "\344\277\235\345\255\230\350\267\257\345\276\204", nullptr));
+        ___qtablewidgetitem1->setText(QApplication::translate("vedio_query", "\351\203\250\344\273\2661", nullptr));
         QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("vedio_query", "\350\247\206\351\242\221\346\227\266\351\225\277", nullptr));
+        ___qtablewidgetitem2->setText(QApplication::translate("vedio_query", "\350\247\206\351\242\2211", nullptr));
         QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QApplication::translate("vedio_query", "\350\247\206\351\242\221\346\246\202\350\277\260", nullptr));
         QTableWidgetItem *___qtablewidgetitem4 = tableWidget->verticalHeaderItem(0);
@@ -149,7 +160,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem6 = tableWidget->item(0, 0);
         ___qtablewidgetitem6->setText(QApplication::translate("vedio_query", "\345\207\217\351\200\237\345\231\250", nullptr));
         QTableWidgetItem *___qtablewidgetitem7 = tableWidget->item(0, 1);
-        ___qtablewidgetitem7->setText(QApplication::translate("vedio_query", "D:\\liuyu\\task", nullptr));
+        ___qtablewidgetitem7->setText(QApplication::translate("vedio_query", "\345\272\225\345\272\247", nullptr));
         QTableWidgetItem *___qtablewidgetitem8 = tableWidget->item(0, 2);
         ___qtablewidgetitem8->setText(QApplication::translate("vedio_query", "13:14:00", nullptr));
         tableWidget->setSortingEnabled(__sortingEnabled);
@@ -158,6 +169,25 @@ public:
         openBtn->setText(QApplication::translate("vedio_query", "\346\211\223\345\274\200", nullptr));
         stopBtn->setText(QApplication::translate("vedio_query", "\345\201\234\346\255\242", nullptr));
         play_pauseBtn->setText(QApplication::translate("vedio_query", "\346\222\255\346\224\276", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem = treeWidget->headerItem();
+        ___qtreewidgetitem->setText(0, QApplication::translate("vedio_query", "1", nullptr));
+
+        const bool __sortingEnabled1 = treeWidget->isSortingEnabled();
+        treeWidget->setSortingEnabled(false);
+        QTreeWidgetItem *___qtreewidgetitem1 = treeWidget->topLevelItem(0);
+        ___qtreewidgetitem1->setText(0, QApplication::translate("vedio_query", "\345\207\217\351\200\237\345\231\250", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem2 = ___qtreewidgetitem1->child(0);
+        ___qtreewidgetitem2->setText(0, QApplication::translate("vedio_query", "\351\203\250\344\273\2661", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem3 = ___qtreewidgetitem2->child(0);
+        ___qtreewidgetitem3->setText(0, QApplication::translate("vedio_query", "\350\247\206\351\242\2211", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem4 = ___qtreewidgetitem1->child(1);
+        ___qtreewidgetitem4->setText(0, QApplication::translate("vedio_query", "\351\203\250\344\273\2662", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem5 = ___qtreewidgetitem4->child(0);
+        ___qtreewidgetitem5->setText(0, QApplication::translate("vedio_query", "\350\247\206\351\242\2212", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem6 = ___qtreewidgetitem1->child(2);
+        ___qtreewidgetitem6->setText(0, QApplication::translate("vedio_query", "\351\203\250\344\273\266\345\256\211\350\243\205\350\247\206\351\242\221", nullptr));
+        treeWidget->setSortingEnabled(__sortingEnabled1);
+
     } // retranslateUi
 
 };
