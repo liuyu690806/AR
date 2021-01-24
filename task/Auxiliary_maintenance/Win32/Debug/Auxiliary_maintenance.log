@@ -1,0 +1,40 @@
+﻿  Generate moc_predefs.h
+  uic mainscence.ui
+  uic maintenance_mask.ui
+  uic mask_management.ui
+  uic personal_inf.ui
+  uic sign_in.ui
+  uic user_management.ui
+  uic vedio_query.ui
+  rcc res.qrc
+  moc mainscence.h
+  moc maintenance_mask.h
+  moc mask_management.h
+  moc mypushbutton.h
+  moc personal_inf.h
+  moc playerslider.h
+  moc sign_in.h
+  moc user_management.h
+  moc vedio_query.h
+  main.cpp
+  mainscence.cpp
+  maintenance_mask.cpp
+  mask_management.cpp
+  mypushbutton.cpp
+  personal_inf.cpp
+  playerslider.cpp
+  sign_in.cpp
+D:\liuyu\task\Auxiliary_maintenance\mainscence.cpp(196,43): warning C4819: 该文件包含不能在当前代码页(0)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  user_management.cpp
+  vedio_query.cpp
+  qrc_res.cpp
+  moc_mainscence.cpp
+  moc_maintenance_mask.cpp
+  moc_mask_management.cpp
+  moc_mypushbutton.cpp
+  moc_personal_inf.cpp
+  moc_playerslider.cpp
+  moc_sign_in.cpp
+  moc_user_management.cpp
+  moc_vedio_query.cpp
+  Auxiliary_maintenance.vcxproj -> D:\liuyu\task\Auxiliary_maintenance\debug\Auxiliary_maintenance.exe
