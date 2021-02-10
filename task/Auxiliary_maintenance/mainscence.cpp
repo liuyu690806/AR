@@ -178,6 +178,7 @@ void mainscence::selectitems(QTreeWidgetItem * in1,int in2)
                  m_maskscence->setParent(this);
                  m_maskscence->show();
                  m_maskscence->move(ui->widget_left->width(),((screenRect.height()/14)+33));
+
                  in1->setSelected(false);
               });
         }
@@ -189,26 +190,26 @@ void mainscence::selectitems(QTreeWidgetItem * in1,int in2)
 }
 
 
- void mainscence::closeEvent(QCloseEvent *event)
- {
-     if(0)
-     {
-         int b=QMessageBox::question(this,QStringLiteral("未保存"),QStringLiteral("当前修改未保存，立即保存吗？"),
-                               QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::Cancel);
-         if(b==QMessageBox::Cancel)
-         {
-             event->ignore();
-             return;
-         }
-         if(b==QMessageBox::Yes)
-         {
-             // saveData(contentSheet);
+// void mainscence::closeEvent(QCloseEvent *event)
+// {
+//     if(0)
+//     {
+//         int b=QMessageBox::question(this,QStringLiteral("未保存"),QStringLiteral("当前修改未保存，立即保存吗？"),
+//                               QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::Cancel);
+//         if(b==QMessageBox::Cancel)
+//         {
+//             event->ignore();
+//             return;
+//         }
+//         if(b==QMessageBox::Yes)
+//         {
+//             // saveData(contentSheet);
 
-         }
+//         }
 
-     }
-     event->accept();
- }
+//     }
+//     event->accept();
+// }
 
 mainscence::~mainscence()
 {

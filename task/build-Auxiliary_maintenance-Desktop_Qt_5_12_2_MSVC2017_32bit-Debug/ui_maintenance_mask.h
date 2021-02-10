@@ -14,7 +14,6 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QListWidget>
-#include <QtWidgets/QOpenGLWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTabWidget>
@@ -27,7 +26,6 @@ QT_BEGIN_NAMESPACE
 class Ui_maintenance_mask
 {
 public:
-    QOpenGLWidget *openGLWidget;
     QGroupBox *gb_xr;
     QVBoxLayout *verticalLayout;
     QTabWidget *tab_addtag;
@@ -43,20 +41,18 @@ public:
     QPushButton *pushButton;
     QSpacerItem *horizontalSpacer_3;
     QListWidget *listWidget;
-    QOpenGLWidget *openGLWidget_2;
     QTimeEdit *timeEdit;
+    QWidget *widget_vedio;
+    QWidget *widget_model;
 
     void setupUi(QWidget *maintenance_mask)
     {
         if (maintenance_mask->objectName().isEmpty())
             maintenance_mask->setObjectName(QString::fromUtf8("maintenance_mask"));
-        maintenance_mask->resize(374, 300);
-        openGLWidget = new QOpenGLWidget(maintenance_mask);
-        openGLWidget->setObjectName(QString::fromUtf8("openGLWidget"));
-        openGLWidget->setGeometry(QRect(-20, 20, 151, 231));
+        maintenance_mask->resize(913, 639);
         gb_xr = new QGroupBox(maintenance_mask);
         gb_xr->setObjectName(QString::fromUtf8("gb_xr"));
-        gb_xr->setGeometry(QRect(130, 132, 370, 351));
+        gb_xr->setGeometry(QRect(160, 150, 370, 351));
         QFont font;
         font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font.setPointSize(10);
@@ -121,12 +117,15 @@ public:
 
         verticalLayout->addWidget(listWidget);
 
-        openGLWidget_2 = new QOpenGLWidget(maintenance_mask);
-        openGLWidget_2->setObjectName(QString::fromUtf8("openGLWidget_2"));
-        openGLWidget_2->setGeometry(QRect(160, 20, 181, 91));
         timeEdit = new QTimeEdit(maintenance_mask);
         timeEdit->setObjectName(QString::fromUtf8("timeEdit"));
         timeEdit->setGeometry(QRect(10, 270, 118, 22));
+        widget_vedio = new QWidget(maintenance_mask);
+        widget_vedio->setObjectName(QString::fromUtf8("widget_vedio"));
+        widget_vedio->setGeometry(QRect(10, 80, 120, 141));
+        widget_model = new QWidget(maintenance_mask);
+        widget_model->setObjectName(QString::fromUtf8("widget_model"));
+        widget_model->setGeometry(QRect(260, 60, 120, 80));
 
         retranslateUi(maintenance_mask);
 

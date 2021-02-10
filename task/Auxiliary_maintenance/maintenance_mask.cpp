@@ -1,7 +1,7 @@
 ﻿#include "maintenance_mask.h"
 #include "ui_maintenance_mask.h"
 #include <QDesktopWidget>
-
+#pragma execution_character_set("utf-8")
 maintenance_mask::maintenance_mask(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::maintenance_mask)
@@ -15,10 +15,19 @@ maintenance_mask::maintenance_mask(QWidget *parent) :
     this->setFixedSize(screenRect.width()-300,screenRect.height()/14*13);
 
     //渲染设置
-    ui->openGLWidget->move(0,5);
-    ui->openGLWidget->setFixedSize(1080,810);
-    ui->openGLWidget_2->setFixedSize(400,300);
-    ui->openGLWidget_2->move(1130,5);
+    QPalette qplte;
+    qplte.setColor(QPalette::Window,QColor(0,0,0));
+
+    ui->widget_vedio->move(0,5);
+    ui->widget_vedio->setFixedSize(1080,810);
+    ui->widget_vedio->setAutoFillBackground(true);
+    ui->widget_vedio->setPalette(qplte);
+
+    ui->widget_model->setFixedSize(400,300);
+    ui->widget_model->move(1130,5);
+    ui->widget_model->setAutoFillBackground(true);
+    ui->widget_model->setPalette(qplte);
+
     ui->gb_xr->setFixedSize(400,550);
     ui->tab_addtag->setFixedHeight(320);
     ui->gb_xr->move(1130,335);

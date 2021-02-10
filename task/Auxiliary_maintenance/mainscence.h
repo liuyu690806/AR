@@ -45,7 +45,7 @@ public:
     user_management * u_managescence=NULL;
 
     //自动关闭widget窗体
-    void closeEvent(QCloseEvent *);
+   // void closeEvent(QCloseEvent *);
 
     //自定义槽函数
 public slots:

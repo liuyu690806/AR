@@ -6,28 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>374</width>
-    <height>300</height>
+    <width>913</width>
+    <height>639</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QOpenGLWidget" name="openGLWidget">
-   <property name="geometry">
-    <rect>
-     <x>-20</x>
-     <y>20</y>
-     <width>151</width>
-     <height>231</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QGroupBox" name="gb_xr">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>132</y>
+     <x>160</x>
+     <y>150</y>
      <width>370</width>
      <height>351</height>
     </rect>
@@ -141,16 +131,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QOpenGLWidget" name="openGLWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>20</y>
-     <width>181</width>
-     <height>91</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QTimeEdit" name="timeEdit">
    <property name="geometry">
     <rect>
@@ -158,6 +138,26 @@
      <y>270</y>
      <width>118</width>
      <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QWidget" name="widget_vedio" native="true">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>120</width>
+     <height>141</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QWidget" name="widget_model" native="true">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>60</y>
+     <width>120</width>
+     <height>80</height>
     </rect>
    </property>
   </widget>
