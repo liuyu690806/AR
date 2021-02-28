@@ -32,10 +32,9 @@ QT_BEGIN_NAMESPACE
 class Ui_user_management
 {
 public:
-    QGridLayout *gridLayout_2;
-    QSpacerItem *verticalSpacer_3;
-    QSpacerItem *verticalSpacer_2;
+    QGridLayout *gridLayout_3;
     QSpacerItem *verticalSpacer;
+    QSpacerItem *horizontalSpacer;
     QGroupBox *groupBox_all;
     QVBoxLayout *verticalLayout_3;
     QWidget *widget;
@@ -65,16 +64,25 @@ public:
     QLineEdit *lineEdit_4;
     QLabel *label_5;
     QSpacerItem *verticalSpacer_4;
+    QGroupBox *groupBox_5;
+    QGridLayout *gridLayout_2;
+    QLabel *label_7;
+    QLineEdit *lineEdit_6;
+    QLineEdit *lineEdit_7;
+    QLabel *label_8;
+    QSpacerItem *verticalSpacer_9;
     QGroupBox *groupBox_3;
     QVBoxLayout *verticalLayout_2;
     QRadioButton *radioButton;
     QRadioButton *radioButton_2;
     QRadioButton *radioButton_3;
-    QSpacerItem *verticalSpacer_5;
-    QSpacerItem *verticalSpacer_7;
+    QPushButton *pushButton_2;
     QSpacerItem *horizontalSpacer_2;
     QSpacerItem *verticalSpacer_6;
-    QSpacerItem *horizontalSpacer;
+    QSpacerItem *verticalSpacer_3;
+    QSpacerItem *verticalSpacer_7;
+    QSpacerItem *verticalSpacer_2;
+    QSpacerItem *verticalSpacer_5;
     QWidget *widget_6;
     QVBoxLayout *verticalLayout_5;
     QWidget *widget_5;
@@ -84,26 +92,21 @@ public:
     QGroupBox *groupBox_4;
     QVBoxLayout *verticalLayout_4;
     QTableWidget *tableWidget;
-    QSpacerItem *verticalSpacer_8;
 
     void setupUi(QWidget *user_management)
     {
         if (user_management->objectName().isEmpty())
             user_management->setObjectName(QString::fromUtf8("user_management"));
-        user_management->resize(400, 300);
-        gridLayout_2 = new QGridLayout(user_management);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_2->addItem(verticalSpacer_3, 3, 2, 1, 1);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_2->addItem(verticalSpacer_2, 6, 2, 1, 1);
-
+        user_management->resize(455, 848);
+        gridLayout_3 = new QGridLayout(user_management);
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_2->addItem(verticalSpacer, 0, 1, 1, 1);
+        gridLayout_3->addItem(verticalSpacer, 0, 1, 1, 1);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_3->addItem(horizontalSpacer, 1, 0, 1, 1);
 
         groupBox_all = new QGroupBox(user_management);
         groupBox_all->setObjectName(QString::fromUtf8("groupBox_all"));
@@ -251,6 +254,38 @@ public:
 
         verticalLayout_3->addWidget(groupBox_2);
 
+        groupBox_5 = new QGroupBox(groupBox_all);
+        groupBox_5->setObjectName(QString::fromUtf8("groupBox_5"));
+        groupBox_5->setFont(font);
+        gridLayout_2 = new QGridLayout(groupBox_5);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        label_7 = new QLabel(groupBox_5);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+
+        gridLayout_2->addWidget(label_7, 2, 0, 1, 1);
+
+        lineEdit_6 = new QLineEdit(groupBox_5);
+        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
+
+        gridLayout_2->addWidget(lineEdit_6, 0, 1, 1, 1);
+
+        lineEdit_7 = new QLineEdit(groupBox_5);
+        lineEdit_7->setObjectName(QString::fromUtf8("lineEdit_7"));
+
+        gridLayout_2->addWidget(lineEdit_7, 2, 1, 1, 1);
+
+        label_8 = new QLabel(groupBox_5);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+
+        gridLayout_2->addWidget(label_8, 0, 0, 1, 1);
+
+        verticalSpacer_9 = new QSpacerItem(20, 35, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_2->addItem(verticalSpacer_9, 1, 1, 1, 1);
+
+
+        verticalLayout_3->addWidget(groupBox_5);
+
         groupBox_3 = new QGroupBox(groupBox_all);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
         groupBox_3->setFont(font);
@@ -274,28 +309,41 @@ public:
 
         verticalLayout_3->addWidget(groupBox_3);
 
+        pushButton_2 = new QPushButton(groupBox_all);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font2.setPointSize(13);
+        pushButton_2->setFont(font2);
 
-        gridLayout_2->addWidget(groupBox_all, 1, 1, 1, 1);
+        verticalLayout_3->addWidget(pushButton_2);
 
-        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_2->addItem(verticalSpacer_5, 7, 2, 1, 1);
-
-        verticalSpacer_7 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_2->addItem(verticalSpacer_7, 4, 2, 1, 1);
+        gridLayout_3->addWidget(groupBox_all, 1, 1, 1, 1);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_2->addItem(horizontalSpacer_2, 1, 3, 1, 1);
+        gridLayout_3->addItem(horizontalSpacer_2, 1, 3, 1, 1);
 
-        verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer_6 = new QSpacerItem(17, 37, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_2->addItem(verticalSpacer_6, 2, 2, 1, 1);
+        gridLayout_3->addItem(verticalSpacer_6, 2, 2, 1, 1);
 
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        verticalSpacer_3 = new QSpacerItem(17, 37, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_2->addItem(horizontalSpacer, 1, 0, 1, 1);
+        gridLayout_3->addItem(verticalSpacer_3, 3, 2, 1, 1);
+
+        verticalSpacer_7 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_3->addItem(verticalSpacer_7, 4, 2, 1, 1);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_3->addItem(verticalSpacer_2, 5, 2, 1, 1);
+
+        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_3->addItem(verticalSpacer_5, 6, 2, 1, 1);
 
         widget_6 = new QWidget(user_management);
         widget_6->setObjectName(QString::fromUtf8("widget_6"));
@@ -307,19 +355,16 @@ public:
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         lineEdit_5 = new QLineEdit(widget_5);
         lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
-        QFont font2;
-        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font2.setPointSize(12);
-        lineEdit_5->setFont(font2);
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font3.setPointSize(12);
+        lineEdit_5->setFont(font3);
 
         horizontalLayout_5->addWidget(lineEdit_5);
 
         pushButton = new QPushButton(widget_5);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        QFont font3;
-        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font3.setPointSize(13);
-        pushButton->setFont(font3);
+        pushButton->setFont(font2);
 
         horizontalLayout_5->addWidget(pushButton);
 
@@ -340,11 +385,7 @@ public:
         verticalLayout_5->addWidget(groupBox_4);
 
 
-        gridLayout_2->addWidget(widget_6, 1, 2, 1, 1);
-
-        verticalSpacer_8 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_2->addItem(verticalSpacer_8, 5, 2, 1, 1);
+        gridLayout_3->addWidget(widget_6, 1, 2, 1, 1);
 
 
         retranslateUi(user_management);
@@ -370,10 +411,14 @@ public:
         groupBox_2->setTitle(QApplication::translate("user_management", "\350\201\224\347\263\273\346\226\271\345\274\217", nullptr));
         label_6->setText(QApplication::translate("user_management", "\346\211\213\346\234\272\357\274\232", nullptr));
         label_5->setText(QApplication::translate("user_management", "\351\202\256\347\256\261\357\274\232", nullptr));
+        groupBox_5->setTitle(QApplication::translate("user_management", "\345\257\206\347\240\201\344\277\256\346\224\271", nullptr));
+        label_7->setText(QApplication::translate("user_management", "\346\226\260\345\257\206\347\240\201\357\274\232", nullptr));
+        label_8->setText(QApplication::translate("user_management", "\346\227\247\345\257\206\347\240\201\357\274\232", nullptr));
         groupBox_3->setTitle(QApplication::translate("user_management", "\346\235\203\351\231\220", nullptr));
         radioButton->setText(QApplication::translate("user_management", "\347\273\264\344\277\256\345\221\230", nullptr));
         radioButton_2->setText(QApplication::translate("user_management", "\350\256\276\350\256\241\345\221\230", nullptr));
         radioButton_3->setText(QApplication::translate("user_management", "\347\256\241\347\220\206\345\221\230", nullptr));
+        pushButton_2->setText(QApplication::translate("user_management", "\344\277\256\346\224\271\346\217\220\344\272\244", nullptr));
         pushButton->setText(QApplication::translate("user_management", "\346\220\234\347\264\242", nullptr));
         groupBox_4->setTitle(QApplication::translate("user_management", "\346\223\215\344\275\234\350\256\260\345\275\225", nullptr));
     } // retranslateUi

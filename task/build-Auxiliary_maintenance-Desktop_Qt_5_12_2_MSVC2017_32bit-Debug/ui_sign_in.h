@@ -60,7 +60,7 @@ public:
     {
         if (Sign_in->objectName().isEmpty())
             Sign_in->setObjectName(QString::fromUtf8("Sign_in"));
-        Sign_in->resize(390, 300);
+        Sign_in->resize(390, 339);
         QFont font;
         font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font.setPointSize(9);
@@ -196,7 +196,7 @@ public:
         Sign_in->setStatusBar(statusBar);
         menuBar = new QMenuBar(Sign_in);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 390, 17));
+        menuBar->setGeometry(QRect(0, 0, 390, 23));
         menu = new QMenu(menuBar);
         menu->setObjectName(QString::fromUtf8("menu"));
         menu_2 = new QMenu(menuBar);
