@@ -37,11 +37,11 @@ public:
     QGridLayout *gridLayout;
     QSpacerItem *horizontalSpacer_3;
     QSpacerItem *horizontalSpacer_4;
-    QLineEdit *lineEdit;
+    QLineEdit *job_id;
     QLabel *label_password;
     QSpacerItem *horizontalSpacer_2;
     QSpacerItem *horizontalSpacer;
-    QLineEdit *lineEdit_2;
+    QLineEdit *password;
     QLabel *label_user;
     QWidget *wid_sq;
     QHBoxLayout *horizontalLayout;
@@ -109,11 +109,11 @@ public:
 
         gridLayout->addItem(horizontalSpacer_4, 1, 3, 1, 1);
 
-        lineEdit = new QLineEdit(wid_password);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setEchoMode(QLineEdit::Password);
+        job_id = new QLineEdit(wid_password);
+        job_id->setObjectName(QString::fromUtf8("job_id"));
+        job_id->setEchoMode(QLineEdit::Normal);
 
-        gridLayout->addWidget(lineEdit, 0, 2, 1, 1);
+        gridLayout->addWidget(job_id, 0, 2, 1, 1);
 
         label_password = new QLabel(wid_password);
         label_password->setObjectName(QString::fromUtf8("label_password"));
@@ -134,10 +134,11 @@ public:
 
         gridLayout->addItem(horizontalSpacer, 0, 0, 1, 1);
 
-        lineEdit_2 = new QLineEdit(wid_password);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        password = new QLineEdit(wid_password);
+        password->setObjectName(QString::fromUtf8("password"));
+        password->setEchoMode(QLineEdit::Password);
 
-        gridLayout->addWidget(lineEdit_2, 1, 2, 1, 1);
+        gridLayout->addWidget(password, 1, 2, 1, 1);
 
         label_user = new QLabel(wid_password);
         label_user->setObjectName(QString::fromUtf8("label_user"));

@@ -28,7 +28,10 @@ public:
      QRect screenRect;
 
 
+signals:
+    void send_jobnum_main(QString);
 
+private:
     //维修标记场景
     maintenance_mask * m_maskscence=NULL;
 
@@ -44,12 +47,20 @@ public:
     //用户管理场景
     user_management * u_managescence=NULL;
 
+    //登录用户信息
+    QString job_num;
+    QString job;
+
+
+
     //自动关闭widget窗体
    // void closeEvent(QCloseEvent *);
 
     //自定义槽函数
 public slots:
     void selectitems(QTreeWidgetItem * ,int);
+    void get_jobnum(QString);
+    void get_job(QString);
 
 
 

@@ -5,6 +5,11 @@
 #include "mypushbutton.h"
 #include <QDebug>
 #include <QTimer>
+#include <QtSql/QSqlDatabase>
+#include <QMessageBox>
+#include <QtSql/QSqlQuery>
+#include <QtSql/QSqlError>
+#include <QString>
 #pragma execution_character_set("utf-8")
 Sign_in::Sign_in(QWidget *parent) :
     QMainWindow(parent),
@@ -36,17 +41,14 @@ Sign_in::Sign_in(QWidget *parent) :
     btnsign->move(85,490);
     btnsign->setText("登     录");
     btnsign->setFont(QFont("微软雅黑",12,QFont::Bold));
-    //实列化主场景1
-    M_scence1=new mainscence;
+    ui->job_id->setText("SX1905012");
+    ui->password->setText("0518");
+    //登录
     connect(btnsign,&MyPushButton::clicked,[=](){
        // qDebug()<<"点击";
         btnsign->zoomdown();
         btnsign->zoomup();
-        QTimer::singleShot(400,this,[=](){
-            //自身隐藏
-            this->hide();
-            M_scence1->showMaximized();
-        });
+        login();
 
     });
 
@@ -55,6 +57,9 @@ Sign_in::Sign_in(QWidget *parent) :
     ui->label_wj->setAlignment(Qt::AlignRight);
     ui->wid_sq->setFixedSize(310,60);
     ui->wid_sq->move(35,390);
+
+    //数据库连接
+    connect_mysql();
 
 }
 
@@ -77,10 +82,98 @@ void Sign_in::paintEvent(QPaintEvent *)
 //    pix1.load (":/IMG/2.png");
 //    painter.drawPixmap(0,240,pix1);
 
+}
 
+void Sign_in::connect_mysql()
+{
+    QSqlDatabase db;
+    if(QSqlDatabase::contains("arsystem"))
+    {
+       db=QSqlDatabase::database("ar");
+    }
+    else {
+            db=QSqlDatabase::addDatabase("QMYSQL","arsystem");
+            db.setHostName("localhost");   //主机名称，如localhost
+            db.setPort(3306);              //数据库端口号
+            db.setDatabaseName("ar");    //数据库名称
+            db.setUserName("root");        //用户名称
+            db.setPassword("0518");      //用户密码
+            db.open();
+           if(db.isOpen())
+           {
+              QLabel * label_stbar = new QLabel("数据库连接成功!",this);
+              ui->statusBar->addPermanentWidget(label_stbar);
+           }
+           else
+           {
+              QMessageBox::warning(this,"错误",db.lastError().text());
+              return;
+           }
+    }
 
 }
 
+void Sign_in::clearUI()
+{
+   ui->job_id->clear();
+   ui->password->clear();
+
+}
+
+void Sign_in::login()
+{
+    QString job_num = ui->job_id->text();
+    QString Password = ui->password->text();
+    QSqlDatabase db = QSqlDatabase::database("arsystem");
+    QSqlQuery query(db);
+    query.exec("select user_name,job_num,pass_word,job from user_info;");
+    bool flag = false;
+    while(query.next())
+    {
+        QString id_temp = query.value("job_num").toString();
+        QString password_temp = query.value("pass_word").toString();
+        if(job_num==id_temp && Password==password_temp)
+        {
+            flag = true;
+            user_name = query.value("user_name").toString();
+            job_num = id_temp;
+            job = query.value("job").toString();
+
+        }
+    }
+    if(flag)
+    {
+
+        qDebug()<<user_name;
+        qDebug()<<job_num;
+        qDebug()<<job;
+
+        QTimer::singleShot(400,this,[=](){
+            //自身隐藏
+            this->hide();
+            //实列化主场景1
+            M_scence1=new mainscence;
+            M_scence1->showMaximized();
+            connect(this,SIGNAL(send_job(QString)),M_scence1,SLOT(get_job(QString)));
+            emit send_job(job);
+            connect(this,SIGNAL(send_jobnum(QString)),M_scence1,SLOT(get_jobnum(QString)));
+            //connect(this,SIGNAL(send_jobnum(QString)),M_scence1,SLOT(get_jobnum_per(QString)));
+            emit send_jobnum(job_num);
+        });
+    }
+    else
+    {
+       QMessageBox::warning(this,"warning","用户名或密码错误,请重新输入！");
+       clearUI();
+    }
+
+}
+
+void Sign_in::reshow()
+{
+    clearUI();
+    this->show();
+}
 
 Sign_in::~Sign_in()
 {

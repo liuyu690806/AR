@@ -213,14 +213,14 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QCheckBox" name="checkBox">
+          <widget class="QRadioButton" name="boy">
            <property name="text">
             <string>      男</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_2">
+          <widget class="QRadioButton" name="girl">
            <property name="text">
             <string>      女</string>
            </property>

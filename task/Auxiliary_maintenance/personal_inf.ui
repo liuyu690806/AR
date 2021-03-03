@@ -61,7 +61,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="comboBox">
+       <widget class="QComboBox" name="job">
         <property name="font">
          <font>
           <family>微软雅黑</family>
@@ -73,11 +73,6 @@
         <item>
          <property name="text">
           <string>维修员</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>设计员</string>
          </property>
         </item>
         <item>
@@ -107,7 +102,7 @@
     </spacer>
    </item>
    <item row="6" column="1">
-    <widget class="QGroupBox" name="groupBox_2">
+    <widget class="QGroupBox" name="contact">
      <property name="font">
       <font>
        <family>微软雅黑</family>
@@ -121,7 +116,7 @@
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <item row="2" column="1">
-       <widget class="QLineEdit" name="lineEdit_4"/>
+       <widget class="QLineEdit" name="phone"/>
       </item>
       <item row="1" column="1">
        <spacer name="verticalSpacer_4">
@@ -137,7 +132,7 @@
        </spacer>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit_3"/>
+       <widget class="QLineEdit" name="email"/>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_6">
@@ -175,11 +170,13 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_2">
+       <widget class="QLineEdit" name="jobnum">
         <property name="font">
          <font>
           <family>微软雅黑</family>
           <pointsize>13</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
         </property>
        </widget>
@@ -219,11 +216,13 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLineEdit" name="name">
         <property name="font">
          <font>
           <family>微软雅黑</family>
           <pointsize>13</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
         </property>
        </widget>
@@ -250,10 +249,13 @@
        </widget>
       </item>
       <item>
-       <widget class="QDateEdit" name="dateEdit">
+       <widget class="QDateEdit" name="joineddate">
         <property name="font">
          <font>
+          <family>微软雅黑</family>
           <pointsize>13</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
         </property>
        </widget>
@@ -288,7 +290,7 @@
     </spacer>
    </item>
    <item row="5" column="1">
-    <widget class="QGroupBox" name="groupBox">
+    <widget class="QGroupBox" name="gender">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -308,14 +310,14 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QCheckBox" name="checkBox">
+       <widget class="QRadioButton" name="boy">
         <property name="text">
          <string>      男</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="checkBox_2">
+       <widget class="QRadioButton" name="girl">
         <property name="text">
          <string>      女</string>
         </property>
@@ -325,7 +327,7 @@
     </widget>
    </item>
    <item row="7" column="1">
-    <widget class="QGroupBox" name="groupBox_3">
+    <widget class="QGroupBox" name="password">
      <property name="font">
       <font>
        <family>微软雅黑</family>
@@ -339,7 +341,7 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
       <item row="2" column="1">
-       <widget class="QLineEdit" name="lineEdit_7"/>
+       <widget class="QLineEdit" name="new_password"/>
       </item>
       <item row="1" column="1">
        <spacer name="verticalSpacer_6">
@@ -355,7 +357,7 @@
        </spacer>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit_8"/>
+       <widget class="QLineEdit" name="old_password"/>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_9">

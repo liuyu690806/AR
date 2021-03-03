@@ -271,6 +271,7 @@ Makefile: ..\Auxiliary_maintenance\Auxiliary_maintenance.pro D:\QT\qt\5.12.2\msv
 		D:\QT\qt\5.12.2\msvc2017\lib\Qt5Widgets.prl \
 		D:\QT\qt\5.12.2\msvc2017\lib\Qt5Gui.prl \
 		D:\QT\qt\5.12.2\msvc2017\lib\Qt5Network.prl \
+		D:\QT\qt\5.12.2\msvc2017\lib\Qt5Sql.prl \
 		D:\QT\qt\5.12.2\msvc2017\lib\Qt5Core.prl \
 		D:\QT\qt\5.12.2\msvc2017\lib\qtmaind.prl
 	$(QMAKE) -o Makefile ..\Auxiliary_maintenance\Auxiliary_maintenance.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -468,6 +469,7 @@ D:\QT\qt\5.12.2\msvc2017\lib\Qt5Multimedia.prl:
 D:\QT\qt\5.12.2\msvc2017\lib\Qt5Widgets.prl:
 D:\QT\qt\5.12.2\msvc2017\lib\Qt5Gui.prl:
 D:\QT\qt\5.12.2\msvc2017\lib\Qt5Network.prl:
+D:\QT\qt\5.12.2\msvc2017\lib\Qt5Sql.prl:
 D:\QT\qt\5.12.2\msvc2017\lib\Qt5Core.prl:
 D:\QT\qt\5.12.2\msvc2017\lib\qtmaind.prl:
 qmake: FORCE

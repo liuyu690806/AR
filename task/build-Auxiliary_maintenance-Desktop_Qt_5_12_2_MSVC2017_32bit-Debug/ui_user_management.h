@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDateEdit>
 #include <QtWidgets/QGridLayout>
@@ -55,8 +54,8 @@ public:
     QComboBox *comboBox;
     QGroupBox *groupBox;
     QVBoxLayout *verticalLayout;
-    QCheckBox *checkBox;
-    QCheckBox *checkBox_2;
+    QRadioButton *boy;
+    QRadioButton *girl;
     QGroupBox *groupBox_2;
     QGridLayout *gridLayout;
     QLabel *label_6;
@@ -209,15 +208,15 @@ public:
         groupBox->setFont(font);
         verticalLayout = new QVBoxLayout(groupBox);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        checkBox = new QCheckBox(groupBox);
-        checkBox->setObjectName(QString::fromUtf8("checkBox"));
+        boy = new QRadioButton(groupBox);
+        boy->setObjectName(QString::fromUtf8("boy"));
 
-        verticalLayout->addWidget(checkBox);
+        verticalLayout->addWidget(boy);
 
-        checkBox_2 = new QCheckBox(groupBox);
-        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
+        girl = new QRadioButton(groupBox);
+        girl->setObjectName(QString::fromUtf8("girl"));
 
-        verticalLayout->addWidget(checkBox_2);
+        verticalLayout->addWidget(girl);
 
 
         verticalLayout_3->addWidget(groupBox);
@@ -406,8 +405,8 @@ public:
         comboBox->setItemText(2, QApplication::translate("user_management", "\347\256\241\347\220\206\345\221\230", nullptr));
 
         groupBox->setTitle(QApplication::translate("user_management", "\346\200\247\345\210\253", nullptr));
-        checkBox->setText(QApplication::translate("user_management", "      \347\224\267", nullptr));
-        checkBox_2->setText(QApplication::translate("user_management", "      \345\245\263", nullptr));
+        boy->setText(QApplication::translate("user_management", "      \347\224\267", nullptr));
+        girl->setText(QApplication::translate("user_management", "      \345\245\263", nullptr));
         groupBox_2->setTitle(QApplication::translate("user_management", "\350\201\224\347\263\273\346\226\271\345\274\217", nullptr));
         label_6->setText(QApplication::translate("user_management", "\346\211\213\346\234\272\357\274\232", nullptr));
         label_5->setText(QApplication::translate("user_management", "\351\202\256\347\256\261\357\274\232", nullptr));

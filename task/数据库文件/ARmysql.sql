@@ -1,0 +1,3 @@
+INSERT INTO `user_info`
+VALUES(NULL,'SZ1905099','阮桥','2020-2-28','男','维修员','23994320@qq.com','15852451241','000000');
+DELETE FROM `user_info` WHERE id=5;

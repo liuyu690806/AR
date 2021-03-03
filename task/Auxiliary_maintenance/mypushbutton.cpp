@@ -15,7 +15,7 @@
       bool ret=pix.load(normalImg);
       if(!ret)
       {
-          qDebug()<<"图片加载失败！";
+         // qDebug()<<"图片加载失败！";
           return;
       }
       this->setFixedSize(pix.width(),pix.height());

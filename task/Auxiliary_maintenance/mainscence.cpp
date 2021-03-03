@@ -119,8 +119,11 @@ void mainscence::selectitems(QTreeWidgetItem * in1,int in2)
         if(in1->text(in2)=="个人信息")
         {
             qDebug()<<"个人信息";
+
             QTimer::singleShot(400,this,[=](){
               p_infscence = new personal_inf;
+              connect(this,SIGNAL(send_jobnum_main(QString)),p_infscence,SLOT(get_jobnum_per(QString)));
+              emit send_jobnum_main(job_num);
               p_infscence->setParent(this);
               p_infscence->show();
               p_infscence->move(ui->widget_left->width(),((screenRect.height()/14)+33));
@@ -130,20 +133,28 @@ void mainscence::selectitems(QTreeWidgetItem * in1,int in2)
         }
         else if(in1->text(in2)=="用户管理")
         {
-              qDebug()<<"用户管理";
-              QTimer::singleShot(400,this,[=](){
-                  u_managescence = new user_management;
-                  u_managescence->setParent(this);
-                  u_managescence->show();
-                  u_managescence->move(ui->widget_left->width(),((screenRect.height()/14)+33));
-                in1->setSelected(false);
-              });
+            if(job=="管理员")
+            {
+                qDebug()<<"用户管理";
+                QTimer::singleShot(400,this,[=](){
+                    u_managescence = new user_management;
+                    u_managescence->setParent(this);
+                    u_managescence->show();
+                    u_managescence->move(ui->widget_left->width(),((screenRect.height()/14)+33));
+                  in1->setSelected(false);
+                });
+            }
+            else
+            {
+                QMessageBox::warning(this,"warning","对不起，您没有权限！");
+                return;
+            }
+
         }
         else if(in1->text(in2)=="标记信息管理")
         {
               qDebug()<<"标记信息管理";
               QTimer::singleShot(400,this,[=](){
-
                 m_managescence = new mask_management;
                 m_managescence->setParent(this);
                 m_managescence->show();
@@ -189,27 +200,19 @@ void mainscence::selectitems(QTreeWidgetItem * in1,int in2)
 
 }
 
+void mainscence::get_job(QString str)
+{
+  job = str;
+  qDebug()<<job;
+}
 
-// void mainscence::closeEvent(QCloseEvent *event)
-// {
-//     if(0)
-//     {
-//         int b=QMessageBox::question(this,QStringLiteral("未保存"),QStringLiteral("当前修改未保存，立即保存吗？"),
-//                               QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::Cancel);
-//         if(b==QMessageBox::Cancel)
-//         {
-//             event->ignore();
-//             return;
-//         }
-//         if(b==QMessageBox::Yes)
-//         {
-//             // saveData(contentSheet);
 
-//         }
+void mainscence::get_jobnum(QString str)
+{
+  job_num = str;
+  qDebug()<<job_num ;
 
-//     }
-//     event->accept();
-// }
+}
 
 mainscence::~mainscence()
 {
