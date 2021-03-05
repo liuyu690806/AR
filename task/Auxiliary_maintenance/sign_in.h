@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "mainscence.h"
+#include "personal_inf.h"
 
 namespace Ui {
 class Sign_in;
@@ -22,7 +23,7 @@ public:
 
     //重写paintEvent事件，画背景图
     void paintEvent(QPaintEvent *);
-     void login();
+    void login();
 
 signals:
     void send_job(QString);
@@ -34,6 +35,8 @@ private slots:
     //void login();
     //界面重现
     void reshow();
+    //处理申请账号的信号，进入个人信息界面
+    void getpersonal_info();
 
 
 
@@ -41,6 +44,7 @@ private slots:
 
 private:
     mainscence * M_scence1=NULL;
+    personal_inf * p_infscence=NULL;
     QString job;
     QString user_name;
     QString job_num;

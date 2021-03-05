@@ -22,6 +22,8 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
+#include <mylabel.h>
+#include <mylabel2.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -46,10 +48,10 @@ public:
     QWidget *wid_sq;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer_6;
-    QLabel *label_sq;
+    Mylabel *label_sq;
     QSpacerItem *horizontalSpacer_8;
     QSpacerItem *horizontalSpacer_5;
-    QLabel *label_wj;
+    Mylabel2 *label_wj;
     QSpacerItem *horizontalSpacer_7;
     QStatusBar *statusBar;
     QMenuBar *menuBar;
@@ -111,18 +113,21 @@ public:
 
         job_id = new QLineEdit(wid_password);
         job_id->setObjectName(QString::fromUtf8("job_id"));
+        QFont font3;
+        font3.setPointSize(11);
+        job_id->setFont(font3);
         job_id->setEchoMode(QLineEdit::Normal);
 
         gridLayout->addWidget(job_id, 0, 2, 1, 1);
 
         label_password = new QLabel(wid_password);
         label_password->setObjectName(QString::fromUtf8("label_password"));
-        QFont font3;
-        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font3.setPointSize(12);
-        font3.setBold(true);
-        font3.setWeight(75);
-        label_password->setFont(font3);
+        QFont font4;
+        font4.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font4.setPointSize(13);
+        font4.setBold(true);
+        font4.setWeight(75);
+        label_password->setFont(font4);
 
         gridLayout->addWidget(label_password, 1, 1, 1, 1);
 
@@ -136,17 +141,18 @@ public:
 
         password = new QLineEdit(wid_password);
         password->setObjectName(QString::fromUtf8("password"));
+        password->setFont(font3);
         password->setEchoMode(QLineEdit::Password);
 
         gridLayout->addWidget(password, 1, 2, 1, 1);
 
         label_user = new QLabel(wid_password);
         label_user->setObjectName(QString::fromUtf8("label_user"));
-        QFont font4;
-        font4.setPointSize(12);
-        font4.setBold(true);
-        font4.setWeight(75);
-        label_user->setFont(font4);
+        QFont font5;
+        font5.setPointSize(13);
+        font5.setBold(true);
+        font5.setWeight(75);
+        label_user->setFont(font5);
         label_user->setFrameShape(QFrame::NoFrame);
 
         gridLayout->addWidget(label_user, 0, 1, 1, 1);
@@ -162,11 +168,9 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_6);
 
-        label_sq = new QLabel(wid_sq);
+        label_sq = new Mylabel(wid_sq);
         label_sq->setObjectName(QString::fromUtf8("label_sq"));
-        QFont font5;
-        font5.setPointSize(10);
-        label_sq->setFont(font5);
+        label_sq->setFont(font3);
         label_sq->setCursor(QCursor(Qt::OpenHandCursor));
 
         horizontalLayout->addWidget(label_sq);
@@ -179,9 +183,9 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_5);
 
-        label_wj = new QLabel(wid_sq);
+        label_wj = new Mylabel2(wid_sq);
         label_wj->setObjectName(QString::fromUtf8("label_wj"));
-        label_wj->setFont(font5);
+        label_wj->setFont(font3);
         label_wj->setCursor(QCursor(Qt::OpenHandCursor));
         label_wj->setLayoutDirection(Qt::LeftToRight);
 

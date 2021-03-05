@@ -29,7 +29,7 @@ public:
 
 
 signals:
-    void send_jobnum_main(QString);
+    void send_jobnum_main_to_pinfo(QString);
 
 private:
     //维修标记场景
@@ -58,9 +58,16 @@ private:
 
     //自定义槽函数
 public slots:
-    void selectitems(QTreeWidgetItem * ,int);
+    //tree对象选择
+    void selectitems1(QTreeWidgetItem * ,int);
+    //获取sign_in界面的工号
     void get_jobnum(QString);
+    //获取sign_in界面的工作
     void get_job(QString);
+    //申请账号进入个人信息收集界面
+    void get_personal_inf(QString);
+    //接受personal_info的修改信息
+    void get_modify_personal_inf(QString);
 
 
 

@@ -28,7 +28,7 @@
     </spacer>
    </item>
    <item row="9" column="1">
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="sumbit">
      <property name="font">
       <font>
        <family>微软雅黑</family>
@@ -61,7 +61,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="job">
+       <widget class="MyComboBox" name="job">
         <property name="font">
          <font>
           <family>微软雅黑</family>
@@ -116,7 +116,11 @@
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <item row="2" column="1">
-       <widget class="QLineEdit" name="phone"/>
+       <widget class="QLineEdit" name="phone">
+        <property name="placeholderText">
+         <string>请输入您的手机号，不超过15个字符</string>
+        </property>
+       </widget>
       </item>
       <item row="1" column="1">
        <spacer name="verticalSpacer_4">
@@ -132,7 +136,11 @@
        </spacer>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="email"/>
+       <widget class="QLineEdit" name="email">
+        <property name="placeholderText">
+         <string>请输入您的邮箱，不超过20个字符</string>
+        </property>
+       </widget>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_6">
@@ -179,6 +187,9 @@
           <bold>true</bold>
          </font>
         </property>
+        <property name="placeholderText">
+         <string>请输入您的工号</string>
+        </property>
        </widget>
       </item>
      </layout>
@@ -224,6 +235,9 @@
           <weight>75</weight>
           <bold>true</bold>
          </font>
+        </property>
+        <property name="placeholderText">
+         <string>请输入您的姓名，不超过10个字符</string>
         </property>
        </widget>
       </item>
@@ -314,6 +328,9 @@
         <property name="text">
          <string>      男</string>
         </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
        </widget>
       </item>
       <item>
@@ -341,7 +358,11 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
       <item row="2" column="1">
-       <widget class="QLineEdit" name="new_password"/>
+       <widget class="QLineEdit" name="new_password">
+        <property name="placeholderText">
+         <string>请输入新密码，不超过6位</string>
+        </property>
+       </widget>
       </item>
       <item row="1" column="1">
        <spacer name="verticalSpacer_6">
@@ -357,7 +378,11 @@
        </spacer>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="old_password"/>
+       <widget class="QLineEdit" name="old_password">
+        <property name="placeholderText">
+         <string>初始密码默认000000</string>
+        </property>
+       </widget>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_9">
@@ -394,6 +419,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">mycombobox.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

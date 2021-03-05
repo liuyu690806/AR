@@ -40,8 +40,8 @@ mainscence::mainscence(QWidget *parent) :
                                     "QTreeView::item:selected{background: #1E90FF;}"
                                     "QTreeView::item{margin:8px;}"
                                     "QTreeView{background-color:rgb(200,200,200,100);}");
-     //ui->treeWidget->setParent(this);
-     connect(ui->treeWidget,SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),this,SLOT(selectitems(QTreeWidgetItem*,int)));
+
+       connect(ui->treeWidget,SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),this,SLOT(selectitems1(QTreeWidgetItem*,int)));
 
      //label大标题系统标题
      ui->lab_title->setFixedSize((screenRect.width()-ui->widget_left->width()+8),(screenRect.height()/14));
@@ -66,20 +66,13 @@ mainscence::mainscence(QWidget *parent) :
      ui->label_recent->setFixedSize(ui->widget_left->width(),45);
      ui->label_recent->setFont(QFont("微软雅黑",12,QFont::Bold));
      ui->label_recent->setStyleSheet("QLabel{ color:white; height:45px;  background-color:rgb(0,0,0,200);}");
-     //ui->label_recent->setParent(this);
-
-
-
-
-
-
 
 
 
 }
 
 
-void mainscence::selectitems(QTreeWidgetItem * in1,int in2)
+void mainscence::selectitems1(QTreeWidgetItem * in1,int in2)
 {
     if(in1->childCount()!=0)
     {
@@ -118,22 +111,31 @@ void mainscence::selectitems(QTreeWidgetItem * in1,int in2)
         //加载选择场景
         if(in1->text(in2)=="个人信息")
         {
-            qDebug()<<"个人信息";
+            if(job_num!="0")
+            {
+                qDebug()<<"加载个人信息";
+                QTimer::singleShot(400,this,[=](){
+                  p_infscence = new personal_inf;
+                  connect(this,SIGNAL(send_jobnum_main_to_pinfo(QString)),p_infscence,SLOT(get_jobnum_per(QString)));
+                  emit send_jobnum_main_to_pinfo(job_num);
+                  p_infscence->setParent(this);
+                  p_infscence->show();
+                  p_infscence->move(ui->widget_left->width(),((screenRect.height()/14)+33));
+                  connect(p_infscence,SIGNAL(modify_singal(QString)),this,SLOT(get_modify_personal_inf(QString)));
+                  in1->setSelected(false);
+                });
+            }
+            else
+            {
+                QMessageBox::warning(this,"warning","对不起，您没有权限！");
+                return;
+            }
 
-            QTimer::singleShot(400,this,[=](){
-              p_infscence = new personal_inf;
-              connect(this,SIGNAL(send_jobnum_main(QString)),p_infscence,SLOT(get_jobnum_per(QString)));
-              emit send_jobnum_main(job_num);
-              p_infscence->setParent(this);
-              p_infscence->show();
-              p_infscence->move(ui->widget_left->width(),((screenRect.height()/14)+33));
-              in1->setSelected(false);
-            });
 
         }
         else if(in1->text(in2)=="用户管理")
         {
-            if(job=="管理员")
+            if(job=="管理员"&&(job_num!="0"))
             {
                 qDebug()<<"用户管理";
                 QTimer::singleShot(400,this,[=](){
@@ -153,45 +155,79 @@ void mainscence::selectitems(QTreeWidgetItem * in1,int in2)
         }
         else if(in1->text(in2)=="标记信息管理")
         {
-              qDebug()<<"标记信息管理";
-              QTimer::singleShot(400,this,[=](){
-                m_managescence = new mask_management;
-                m_managescence->setParent(this);
-                m_managescence->show();
-                m_managescence->move(ui->widget_left->width(),((screenRect.height()/14)+33));
-                in1->setSelected(false);
-              });
+            if(job_num!="0")
+            {
+                qDebug()<<"标记信息管理";
+                QTimer::singleShot(400,this,[=](){
+                    m_managescence = new mask_management;
+                    m_managescence->setParent(this);
+                    m_managescence->show();
+                    m_managescence->move(ui->widget_left->width(),((screenRect.height()/14)+33));
+                    in1->setSelected(false);
+                  });
+            }
+            else
+            {
+                QMessageBox::warning(this,"warning","对不起，您没有权限！");
+                return;
+            }
+
         }
         else if(in1->text(in2)=="视频查询")
         {
-              qDebug()<<"视频查询";
-              QTimer::singleShot(400,this,[=](){
-                v_queryscence = new vedio_query;
-                v_queryscence->setParent(this);
-                v_queryscence->show();
-                v_queryscence->move(ui->widget_left->width(),((screenRect.height()/14)+33));
+            if(job_num!="0")
+            {
+                qDebug()<<"视频查询";
+                QTimer::singleShot(400,this,[=](){
+                    v_queryscence = new vedio_query;
+                    v_queryscence->setParent(this);
+                    v_queryscence->show();
+                    v_queryscence->move(ui->widget_left->width(),((screenRect.height()/14)+33));
 
-                in1->setSelected(false);
-              });
+                    in1->setSelected(false);
+                  });
+            }
+            else {
+                QMessageBox::warning(this,"warning","对不起，您没有权限！");
+                return;
+            }
+
         }
         else if(in1->text(in2)=="视频剪辑")
         {
-              qDebug()<<"视频剪辑";
-              QTimer::singleShot(400,this,[=](){
-                in1->setSelected(false);
-              });
+            if(job_num!="0")
+            {
+                qDebug()<<"视频剪辑";
+                QTimer::singleShot(400,this,[=](){
+                    in1->setSelected(false);
+                  });
+            }
+            else {
+                QMessageBox::warning(this,"warning","对不起，您没有权限！");
+                return;
+            }
+
         }
         else if(in1->text(in2)=="维修标记")
         {
-              qDebug()<<"维修标记";
-           QTimer::singleShot(400,this,[=](){
-                 m_maskscence = new maintenance_mask;
-                 m_maskscence->setParent(this);
-                 m_maskscence->show();
-                 m_maskscence->move(ui->widget_left->width(),((screenRect.height()/14)+33));
+            if(job_num!="0")
+            {
+                qDebug()<<"维修标记";
+                QTimer::singleShot(400,this,[=](){
+                      m_maskscence = new maintenance_mask;
+                      m_maskscence->setParent(this);
+                      m_maskscence->show();
+                      m_maskscence->move(ui->widget_left->width(),((screenRect.height()/14)+33));
 
-                 in1->setSelected(false);
-              });
+                      in1->setSelected(false);
+                   });
+            }
+            else
+            {
+                QMessageBox::warning(this,"warning","对不起，您没有权限！");
+                return;
+            }
+
         }
     }
 
@@ -200,18 +236,41 @@ void mainscence::selectitems(QTreeWidgetItem * in1,int in2)
 
 }
 
+
 void mainscence::get_job(QString str)
 {
   job = str;
-  qDebug()<<job;
+  qDebug()<<job<<"主界面";
 }
 
 
 void mainscence::get_jobnum(QString str)
 {
   job_num = str;
-  qDebug()<<job_num ;
+  qDebug()<<job_num<<"主界面" ;
+}
 
+//加载个人信息收集界面
+void mainscence::get_personal_inf(QString)
+{
+    qDebug()<<"个人信息";
+    QTimer::singleShot(200,this,[=](){
+      p_infscence = new personal_inf;
+      connect(this,SIGNAL(send_jobnum_main_to_pinfo(QString)),p_infscence,SLOT(get_jobnum_per(QString)));
+      emit send_jobnum_main_to_pinfo(job_num);
+      p_infscence->setParent(this);
+      p_infscence->show();
+      p_infscence->move(ui->widget_left->width(),((screenRect.height()/14)+33));
+    });
+
+}
+
+void mainscence::get_modify_personal_inf(QString str)
+{
+   job_num=str;
+   connect(this,SIGNAL(send_jobnum_main_to_pinfo(QString)),p_infscence,SLOT(get_jobnum_per(QString)));
+   emit send_jobnum_main_to_pinfo(job_num);
+   qDebug()<<"执行了";
 }
 
 mainscence::~mainscence()

@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDateEdit>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
@@ -23,6 +22,7 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <mycombobox.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -31,11 +31,11 @@ class Ui_personal_inf
 public:
     QGridLayout *gridLayout_4;
     QSpacerItem *horizontalSpacer_2;
-    QPushButton *pushButton;
+    QPushButton *sumbit;
     QWidget *widget_4;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_4;
-    QComboBox *job;
+    MyComboBox *job;
     QSpacerItem *verticalSpacer_2;
     QGroupBox *contact;
     QGridLayout *gridLayout;
@@ -83,16 +83,16 @@ public:
 
         gridLayout_4->addItem(horizontalSpacer_2, 3, 2, 1, 1);
 
-        pushButton = new QPushButton(personal_inf);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        sumbit = new QPushButton(personal_inf);
+        sumbit->setObjectName(QString::fromUtf8("sumbit"));
         QFont font;
         font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font.setPointSize(13);
         font.setBold(true);
         font.setWeight(75);
-        pushButton->setFont(font);
+        sumbit->setFont(font);
 
-        gridLayout_4->addWidget(pushButton, 9, 1, 1, 1);
+        gridLayout_4->addWidget(sumbit, 9, 1, 1, 1);
 
         widget_4 = new QWidget(personal_inf);
         widget_4->setObjectName(QString::fromUtf8("widget_4"));
@@ -104,7 +104,7 @@ public:
 
         horizontalLayout_4->addWidget(label_4);
 
-        job = new QComboBox(widget_4);
+        job = new MyComboBox(widget_4);
         job->addItem(QString());
         job->addItem(QString());
         job->setObjectName(QString::fromUtf8("job"));
@@ -232,6 +232,7 @@ public:
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         boy = new QRadioButton(gender);
         boy->setObjectName(QString::fromUtf8("boy"));
+        boy->setChecked(true);
 
         verticalLayout->addWidget(boy);
 
@@ -288,21 +289,27 @@ public:
     void retranslateUi(QWidget *personal_inf)
     {
         personal_inf->setWindowTitle(QApplication::translate("personal_inf", "Form", nullptr));
-        pushButton->setText(QApplication::translate("personal_inf", "\346\217\220        \344\272\244", nullptr));
+        sumbit->setText(QApplication::translate("personal_inf", "\346\217\220        \344\272\244", nullptr));
         label_4->setText(QApplication::translate("personal_inf", "\350\201\214\344\275\215\357\274\232", nullptr));
         job->setItemText(0, QApplication::translate("personal_inf", "\347\273\264\344\277\256\345\221\230", nullptr));
         job->setItemText(1, QApplication::translate("personal_inf", "\347\256\241\347\220\206\345\221\230", nullptr));
 
         contact->setTitle(QApplication::translate("personal_inf", "\350\201\224\347\263\273\346\226\271\345\274\217", nullptr));
+        phone->setPlaceholderText(QApplication::translate("personal_inf", "\350\257\267\350\276\223\345\205\245\346\202\250\347\232\204\346\211\213\346\234\272\345\217\267\357\274\214\344\270\215\350\266\205\350\277\20715\344\270\252\345\255\227\347\254\246", nullptr));
+        email->setPlaceholderText(QApplication::translate("personal_inf", "\350\257\267\350\276\223\345\205\245\346\202\250\347\232\204\351\202\256\347\256\261\357\274\214\344\270\215\350\266\205\350\277\20720\344\270\252\345\255\227\347\254\246", nullptr));
         label_6->setText(QApplication::translate("personal_inf", "\346\211\213\346\234\272\357\274\232", nullptr));
         label_5->setText(QApplication::translate("personal_inf", "\351\202\256\347\256\261\357\274\232", nullptr));
         label_2->setText(QApplication::translate("personal_inf", "\345\267\245\345\217\267\357\274\232", nullptr));
+        jobnum->setPlaceholderText(QApplication::translate("personal_inf", "\350\257\267\350\276\223\345\205\245\346\202\250\347\232\204\345\267\245\345\217\267", nullptr));
         label->setText(QApplication::translate("personal_inf", "\345\247\223\345\220\215\357\274\232", nullptr));
+        name->setPlaceholderText(QApplication::translate("personal_inf", "\350\257\267\350\276\223\345\205\245\346\202\250\347\232\204\345\247\223\345\220\215\357\274\214\344\270\215\350\266\205\350\277\20710\344\270\252\345\255\227\347\254\246", nullptr));
         label_3->setText(QApplication::translate("personal_inf", "\345\205\245\350\201\214\346\227\245\346\234\237\357\274\232", nullptr));
         gender->setTitle(QApplication::translate("personal_inf", "\346\200\247\345\210\253", nullptr));
         boy->setText(QApplication::translate("personal_inf", "      \347\224\267", nullptr));
         girl->setText(QApplication::translate("personal_inf", "      \345\245\263", nullptr));
         password->setTitle(QApplication::translate("personal_inf", "\345\257\206\347\240\201\344\277\256\346\224\271", nullptr));
+        new_password->setPlaceholderText(QApplication::translate("personal_inf", "\350\257\267\350\276\223\345\205\245\346\226\260\345\257\206\347\240\201\357\274\214\344\270\215\350\266\205\350\277\2076\344\275\215", nullptr));
+        old_password->setPlaceholderText(QApplication::translate("personal_inf", "\345\210\235\345\247\213\345\257\206\347\240\201\351\273\230\350\256\244000000", nullptr));
         label_9->setText(QApplication::translate("personal_inf", "\346\226\260\345\257\206\347\240\201\357\274\232", nullptr));
         label_10->setText(QApplication::translate("personal_inf", "\346\227\247\345\257\206\347\240\201\357\274\232", nullptr));
     } // retranslateUi

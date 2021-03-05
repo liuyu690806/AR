@@ -66,6 +66,11 @@
      </item>
      <item row="0" column="2">
       <widget class="QLineEdit" name="job_id">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="echoMode">
         <enum>QLineEdit::Normal</enum>
        </property>
@@ -76,7 +81,7 @@
        <property name="font">
         <font>
          <family>微软雅黑</family>
-         <pointsize>12</pointsize>
+         <pointsize>13</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -114,6 +119,11 @@
      </item>
      <item row="1" column="2">
       <widget class="QLineEdit" name="password">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="echoMode">
         <enum>QLineEdit::Password</enum>
        </property>
@@ -123,7 +133,7 @@
       <widget class="QLabel" name="label_user">
        <property name="font">
         <font>
-         <pointsize>12</pointsize>
+         <pointsize>13</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -162,10 +172,10 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="label_sq">
+      <widget class="Mylabel" name="label_sq">
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <pointsize>11</pointsize>
         </font>
        </property>
        <property name="cursor">
@@ -203,10 +213,10 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="label_wj">
+      <widget class="Mylabel2" name="label_wj">
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <pointsize>11</pointsize>
         </font>
        </property>
        <property name="cursor">
@@ -302,6 +312,18 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>Mylabel</class>
+   <extends>QLabel</extends>
+   <header location="global">mylabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Mylabel2</class>
+   <extends>QLabel</extends>
+   <header location="global">mylabel2.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

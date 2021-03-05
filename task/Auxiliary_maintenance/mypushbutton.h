@@ -4,6 +4,7 @@
 #include <QPushButton>
 //#include "maintenance_mask.h"
 #pragma execution_character_set("utf-8")
+
 class MyPushButton : public QPushButton
 {
     Q_OBJECT

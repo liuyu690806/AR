@@ -39,8 +39,8 @@ Sign_in::Sign_in(QWidget *parent) :
     btnsign->setParent(this);
     btnsign->setFixedSize(210,40);
     btnsign->move(85,490);
-    btnsign->setText("登     录");
-    btnsign->setFont(QFont("微软雅黑",12,QFont::Bold));
+    btnsign->setText("登      录");
+    btnsign->setFont(QFont("微软雅黑",14,QFont::Bold));
     ui->job_id->setText("SX1905012");
     ui->password->setText("0518");
     //登录
@@ -49,6 +49,7 @@ Sign_in::Sign_in(QWidget *parent) :
         btnsign->zoomdown();
         btnsign->zoomup();
         login();
+
 
     });
 
@@ -60,6 +61,8 @@ Sign_in::Sign_in(QWidget *parent) :
 
     //数据库连接
     connect_mysql();
+    //
+    connect(ui->label_sq,SIGNAL(Afor_an_accout()),this,SLOT(getpersonal_info()));
 
 }
 
@@ -89,7 +92,7 @@ void Sign_in::connect_mysql()
     QSqlDatabase db;
     if(QSqlDatabase::contains("arsystem"))
     {
-       db=QSqlDatabase::database("ar");
+       db=QSqlDatabase::database("arsystem");
     }
     else {
             db=QSqlDatabase::addDatabase("QMYSQL","arsystem");
@@ -147,6 +150,8 @@ void Sign_in::login()
         qDebug()<<user_name;
         qDebug()<<job_num;
         qDebug()<<job;
+        qDebug()<<"登录界面";
+
 
         QTimer::singleShot(400,this,[=](){
             //自身隐藏
@@ -168,6 +173,28 @@ void Sign_in::login()
     }
 
 }
+
+void Sign_in::getpersonal_info()
+{
+    QString job_num="0";
+    QTimer::singleShot(400,this,[=](){
+        //自身隐藏
+        this->hide();
+        //实列化主场景1
+        M_scence1=new mainscence;
+        M_scence1->showMaximized();
+        //connect(this,SIGNAL(send_job(QString)),M_scence1,SLOT(get_job(QString)));
+        //emit send_job(job);
+        connect(this,SIGNAL(send_jobnum(QString)),M_scence1,SLOT(get_jobnum(QString)));
+        connect(this,SIGNAL(send_jobnum(QString)),M_scence1,SLOT(get_personal_inf(QString)));
+        //connect(this,SIGNAL(send_jobnum(QString)),M_scence1,SLOT(get_jobnum_per(QString)));
+        emit send_jobnum(job_num);
+
+
+    });
+
+}
+
 
 void Sign_in::reshow()
 {

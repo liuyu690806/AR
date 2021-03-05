@@ -34,7 +34,10 @@ SOURCES += \
     vedio_query.cpp \
     personal_inf.cpp \
     user_management.cpp \
-    playerslider.cpp
+    playerslider.cpp \
+    mylabel.cpp \
+    mylabel2.cpp \
+    mycombobox.cpp
 
 HEADERS += \
         sign_in.h \
@@ -45,7 +48,10 @@ HEADERS += \
     vedio_query.h \
     personal_inf.h \
     user_management.h \
-    playerslider.h
+    playerslider.h \
+    mylabel.h \
+    mylabel2.h \
+    mycombobox.h
 
 FORMS += \
         sign_in.ui \
