@@ -37,6 +37,9 @@ SOURCES += \
     playerslider.cpp \
     mylabel.cpp \
     mylabel2.cpp \
+    mycombobox.cpp \
+    mypushbutton1.cpp \
+    myinterface.cpp \
     mycombobox.cpp
 
 HEADERS += \
@@ -51,6 +54,9 @@ HEADERS += \
     playerslider.h \
     mylabel.h \
     mylabel2.h \
+    mycombobox.h \
+    mypushbutton1.h \
+    myinterface.h \
     mycombobox.h
 
 FORMS += \

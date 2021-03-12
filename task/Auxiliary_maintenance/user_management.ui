@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>455</width>
-    <height>848</height>
+    <height>852</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -73,7 +73,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit">
+          <widget class="QLineEdit" name="name">
            <property name="font">
             <font>
              <pointsize>13</pointsize>
@@ -103,7 +103,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_2">
+          <widget class="QLineEdit" name="jobnum">
            <property name="font">
             <font>
              <pointsize>13</pointsize>
@@ -133,7 +133,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QDateEdit" name="dateEdit">
+          <widget class="QDateEdit" name="joineddate">
            <property name="font">
             <font>
              <pointsize>13</pointsize>
@@ -146,54 +146,11 @@
       </item>
       <item>
        <widget class="QWidget" name="widget_4" native="true">
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item>
-          <widget class="QLabel" name="label_4">
-           <property name="font">
-            <font>
-             <family>微软雅黑</family>
-             <pointsize>13</pointsize>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>职位：</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="comboBox">
-           <property name="font">
-            <font>
-             <family>微软雅黑</family>
-             <pointsize>13</pointsize>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <item>
-            <property name="text">
-             <string>维修员</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>设计员</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>管理员</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
+        <layout class="QHBoxLayout" name="horizontalLayout_4"/>
        </widget>
       </item>
       <item>
-       <widget class="QGroupBox" name="groupBox">
+       <widget class="QGroupBox" name="gender">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -251,10 +208,10 @@
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QLineEdit" name="lineEdit_3"/>
+          <widget class="QLineEdit" name="email"/>
          </item>
          <item row="2" column="1">
-          <widget class="QLineEdit" name="lineEdit_4"/>
+          <widget class="QLineEdit" name="phone"/>
          </item>
          <item row="0" column="0">
           <widget class="QLabel" name="label_5">
@@ -301,10 +258,10 @@
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QLineEdit" name="lineEdit_6"/>
+          <widget class="QLineEdit" name="old_password"/>
          </item>
          <item row="2" column="1">
-          <widget class="QLineEdit" name="lineEdit_7"/>
+          <widget class="QLineEdit" name="new_password"/>
          </item>
          <item row="0" column="0">
           <widget class="QLabel" name="label_8">
@@ -330,7 +287,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QGroupBox" name="groupBox_3">
+       <widget class="QGroupBox" name="job">
         <property name="font">
          <font>
           <family>微软雅黑</family>
@@ -344,21 +301,14 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <widget class="QRadioButton" name="radioButton">
+          <widget class="QRadioButton" name="repair">
            <property name="text">
             <string>维修员</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_2">
-           <property name="text">
-            <string>设计员</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QRadioButton" name="radioButton_3">
+          <widget class="QRadioButton" name="administration">
            <property name="text">
             <string>管理员</string>
            </property>
@@ -368,7 +318,14 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="MyPushButton1" name="delete_2">
+        <property name="text">
+         <string>删除</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="MyPushButton1" name="modify">
         <property name="font">
          <font>
           <family>微软雅黑</family>
@@ -376,7 +333,7 @@
          </font>
         </property>
         <property name="text">
-         <string>修改提交</string>
+         <string>修改</string>
         </property>
        </widget>
       </item>
@@ -468,17 +425,20 @@
        <widget class="QWidget" name="widget_5" native="true">
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QLineEdit" name="lineEdit_5">
+          <widget class="QLineEdit" name="search_lineEdit">
            <property name="font">
             <font>
              <family>微软雅黑</family>
              <pointsize>12</pointsize>
             </font>
            </property>
+           <property name="placeholderText">
+            <string>请按工号进行搜索</string>
+           </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="MyPushButton1" name="search">
            <property name="font">
             <font>
              <family>微软雅黑</family>
@@ -508,7 +468,7 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
-          <widget class="QTableWidget" name="tableWidget"/>
+          <widget class="QTextEdit" name="operation_record"/>
          </item>
         </layout>
        </widget>
@@ -518,6 +478,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyPushButton1</class>
+   <extends>QPushButton</extends>
+   <header location="global">mypushbutton1.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

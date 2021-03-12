@@ -6,20 +6,36 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1056</width>
+    <height>777</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QGroupBox" name="gb_text">
+  <widget class="QTreeWidget" name="treeWidget">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>10</y>
-     <width>71</width>
-     <height>81</height>
+     <x>40</x>
+     <y>70</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="gb_info">
+   <property name="geometry">
+    <rect>
+     <x>608</x>
+     <y>9</y>
+     <width>404</width>
+     <height>794</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -31,69 +47,333 @@
    <property name="font">
     <font>
      <family>微软雅黑</family>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="title">
-    <string>文本信息录入</string>
+    <string>信息录入</string>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_5">
-    <item>
-     <widget class="QWidget" name="wid_texttal" native="true">
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QTextEdit" name="textEdit_2"/>
-       </item>
-       <item>
-        <widget class="QWidget" name="widget_3" native="true">
+   <layout class="QGridLayout" name="gridLayout_6">
+    <item row="2" column="0">
+     <widget class="QGroupBox" name="gb_other">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="title">
+       <string>其他信息录入:</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <widget class="QWidget" name="widget_2" native="true">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
-           <widget class="QComboBox" name="comboBox_4">
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="1">
+           <widget class="QComboBox" name="number">
             <item>
              <property name="text">
-              <string>部件1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>部件2</string>
+              <string>序号1</string>
              </property>
             </item>
            </widget>
           </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit_3"/>
+          <item row="0" column="2">
+           <widget class="QLineEdit" name="LE_spa_img_name"/>
           </item>
-          <item>
-           <widget class="QComboBox" name="comboBox_5">
+          <item row="0" column="0">
+           <widget class="QComboBox" name="info_type">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <item>
              <property name="text">
-              <string>工序1</string>
+              <string>图片信息</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>工序2</string>
+              <string>零件信息</string>
              </property>
             </item>
            </widget>
           </item>
-          <item>
-           <widget class="QPushButton" name="btn_ok">
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QWidget" name="widget" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="1" column="0">
+           <widget class="QLineEdit" name="LE_file_path">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="MyPushButton1" name="btn_choosefile">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
-             <string>确定</string>
+             <string>选取文件</string>
             </property>
            </widget>
           </item>
          </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QTextEdit" name="textEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QWidget" name="widget_7" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>装配体：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <widget class="MyComboBox" name="parts_type">
+         <item>
+          <property name="text">
+           <string>部件1</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLineEdit" name="LE_procedure_name"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLineEdit" name="LE_parts_name"/>
+       </item>
+       <item row="0" column="1" colspan="2">
+        <widget class="QLineEdit" name="LE_assembly_name">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="MyPushButton1" name="btn_search_create">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>搜索/创建</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="MyComboBox" name="procedure_type">
+         <item>
+          <property name="text">
+           <string>工序1</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>工序2</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="MyPushButton1" name="btn_add">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>添加</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="MyPushButton1" name="btn_delete">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>删除</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="gb_text">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="title">
+       <string>工艺文本信息录入:</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="6">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>工序：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>部件：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>装配体：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="11">
+        <widget class="QTextEdit" name="text_info"/>
+       </item>
+       <item row="0" column="7">
+        <widget class="QLabel" name="produce">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:blue;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="10">
+        <widget class="MyPushButton1" name="pushButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>文本修改</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QLabel" name="parts">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:blue;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="assembly">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:blue;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
         </widget>
        </item>
       </layout>
@@ -101,17 +381,17 @@
     </item>
    </layout>
   </widget>
-  <widget class="QGroupBox" name="gb_other">
+  <widget class="QGroupBox" name="gb_show_info">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>91</width>
-     <height>61</height>
+     <x>30</x>
+     <y>290</y>
+     <width>476</width>
+     <height>282</height>
     </rect>
    </property>
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -119,291 +399,165 @@
    <property name="font">
     <font>
      <family>微软雅黑</family>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="title">
-    <string>其他信息录入</string>
+    <string>信息表</string>
    </property>
-   <widget class="QWidget" name="wid_choosefile" native="true">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>191</width>
-      <height>231</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QWidget" name="widget_2" native="true">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QLineEdit" name="lineEdit"/>
-        </item>
-        <item>
-         <widget class="QPushButton" name="btn_choosefile">
-          <property name="text">
-           <string>选取文件</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QTextEdit" name="textEdit">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QWidget" name="widget" native="true">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QComboBox" name="comboBox_2">
-          <item>
-           <property name="text">
-            <string>部件1</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>部件2</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>部件3</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_2"/>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBox_3">
-          <item>
-           <property name="text">
-            <string>工序1</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>工序2</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>工序3</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBox">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <item>
-           <property name="text">
-            <string>图片信息</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="btn_menuok">
-          <property name="text">
-           <string>确定</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QTableWidget" name="tableWidget">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>90</y>
-     <width>256</width>
-     <height>131</height>
-    </rect>
-   </property>
-   <row>
-    <property name="text">
-     <string>1</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>2</string>
-    </property>
-   </row>
-   <column>
-    <property name="text">
-     <string>维修对象</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>部件1</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>部件2</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>工序1-1</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>工序1-2</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>1-1文本</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>1-1工艺信息</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>1-1图片信息</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>1-1零件信息</string>
-    </property>
-   </column>
-   <item row="0" column="0">
-    <property name="text">
-     <string>减速器</string>
-    </property>
-   </item>
-   <item row="0" column="1">
-    <property name="text">
-     <string/>
-    </property>
-   </item>
-   <item row="1" column="0">
-    <property name="text">
-     <string>发射单元</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QTreeWidget" name="treeWidget">
-   <property name="geometry">
-    <rect>
-     <x>275</x>
-     <y>20</y>
-     <width>111</width>
-     <height>192</height>
-    </rect>
-   </property>
-   <column>
-    <property name="text">
-     <string>1</string>
-    </property>
-   </column>
-   <item>
-    <property name="text">
-     <string>减速器</string>
-    </property>
-    <item>
-     <property name="text">
-      <string>部件1</string>
-     </property>
-     <item>
-      <property name="text">
-       <string>工序1</string>
+   <layout class="QGridLayout" name="gridLayout_7">
+    <item row="0" column="0">
+     <widget class="QWidget" name="widget_5" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>查询方式：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton">
+         <property name="text">
+          <string>部件信息</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>工序信息</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_3">
+         <property name="text">
+          <string>零部件信息</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="MyPushButton1" name="btn_ok_9">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>刷新</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
-      <item>
+      <row>
        <property name="text">
-        <string>文本</string>
+        <string>1</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>维修对象</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>部件1</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>部件2</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>工序1-1</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>工序1-2</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>1-1文本</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>1-1工艺信息</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>1-1图片信息</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>1-1零件信息</string>
+       </property>
+      </column>
+      <item row="0" column="0">
+       <property name="text">
+        <string>减速器</string>
        </property>
       </item>
-      <item>
+      <item row="0" column="1">
        <property name="text">
-        <string>零件</string>
+        <string/>
        </property>
       </item>
-      <item>
+      <item row="1" column="0">
        <property name="text">
-        <string>工艺</string>
+        <string>发射单元</string>
        </property>
       </item>
-      <item>
-       <property name="text">
-        <string>图片</string>
-       </property>
-      </item>
-     </item>
-     <item>
-      <property name="text">
-       <string>工序2</string>
-      </property>
-     </item>
+     </widget>
     </item>
-    <item>
-     <property name="text">
-      <string>部件2</string>
-     </property>
-    </item>
-   </item>
-   <item>
-    <property name="text">
-     <string>发射单元</string>
-    </property>
-    <item>
-     <property name="text">
-      <string>部件1</string>
-     </property>
-    </item>
-   </item>
+   </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyPushButton1</class>
+   <extends>QPushButton</extends>
+   <header location="global">mypushbutton1.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">mycombobox.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

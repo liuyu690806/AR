@@ -11,20 +11,18 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDateEdit>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <mypushbutton1.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -39,43 +37,41 @@ public:
     QWidget *widget;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
-    QLineEdit *lineEdit;
+    QLineEdit *name;
     QWidget *widget_2;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_2;
-    QLineEdit *lineEdit_2;
+    QLineEdit *jobnum;
     QWidget *widget_3;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_3;
-    QDateEdit *dateEdit;
+    QDateEdit *joineddate;
     QWidget *widget_4;
     QHBoxLayout *horizontalLayout_4;
-    QLabel *label_4;
-    QComboBox *comboBox;
-    QGroupBox *groupBox;
+    QGroupBox *gender;
     QVBoxLayout *verticalLayout;
     QRadioButton *boy;
     QRadioButton *girl;
     QGroupBox *groupBox_2;
     QGridLayout *gridLayout;
     QLabel *label_6;
-    QLineEdit *lineEdit_3;
-    QLineEdit *lineEdit_4;
+    QLineEdit *email;
+    QLineEdit *phone;
     QLabel *label_5;
     QSpacerItem *verticalSpacer_4;
     QGroupBox *groupBox_5;
     QGridLayout *gridLayout_2;
     QLabel *label_7;
-    QLineEdit *lineEdit_6;
-    QLineEdit *lineEdit_7;
+    QLineEdit *old_password;
+    QLineEdit *new_password;
     QLabel *label_8;
     QSpacerItem *verticalSpacer_9;
-    QGroupBox *groupBox_3;
+    QGroupBox *job;
     QVBoxLayout *verticalLayout_2;
-    QRadioButton *radioButton;
-    QRadioButton *radioButton_2;
-    QRadioButton *radioButton_3;
-    QPushButton *pushButton_2;
+    QRadioButton *repair;
+    QRadioButton *administration;
+    MyPushButton1 *delete_2;
+    MyPushButton1 *modify;
     QSpacerItem *horizontalSpacer_2;
     QSpacerItem *verticalSpacer_6;
     QSpacerItem *verticalSpacer_3;
@@ -86,17 +82,17 @@ public:
     QVBoxLayout *verticalLayout_5;
     QWidget *widget_5;
     QHBoxLayout *horizontalLayout_5;
-    QLineEdit *lineEdit_5;
-    QPushButton *pushButton;
+    QLineEdit *search_lineEdit;
+    MyPushButton1 *search;
     QGroupBox *groupBox_4;
     QVBoxLayout *verticalLayout_4;
-    QTableWidget *tableWidget;
+    QTextEdit *operation_record;
 
     void setupUi(QWidget *user_management)
     {
         if (user_management->objectName().isEmpty())
             user_management->setObjectName(QString::fromUtf8("user_management"));
-        user_management->resize(455, 848);
+        user_management->resize(455, 852);
         gridLayout_3 = new QGridLayout(user_management);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
@@ -127,13 +123,13 @@ public:
 
         horizontalLayout->addWidget(label);
 
-        lineEdit = new QLineEdit(widget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        name = new QLineEdit(widget);
+        name->setObjectName(QString::fromUtf8("name"));
         QFont font1;
         font1.setPointSize(13);
-        lineEdit->setFont(font1);
+        name->setFont(font1);
 
-        horizontalLayout->addWidget(lineEdit);
+        horizontalLayout->addWidget(name);
 
 
         verticalLayout_3->addWidget(widget);
@@ -148,11 +144,11 @@ public:
 
         horizontalLayout_2->addWidget(label_2);
 
-        lineEdit_2 = new QLineEdit(widget_2);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setFont(font1);
+        jobnum = new QLineEdit(widget_2);
+        jobnum->setObjectName(QString::fromUtf8("jobnum"));
+        jobnum->setFont(font1);
 
-        horizontalLayout_2->addWidget(lineEdit_2);
+        horizontalLayout_2->addWidget(jobnum);
 
 
         verticalLayout_3->addWidget(widget_2);
@@ -167,11 +163,11 @@ public:
 
         horizontalLayout_3->addWidget(label_3);
 
-        dateEdit = new QDateEdit(widget_3);
-        dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
-        dateEdit->setFont(font1);
+        joineddate = new QDateEdit(widget_3);
+        joineddate->setObjectName(QString::fromUtf8("joineddate"));
+        joineddate->setFont(font1);
 
-        horizontalLayout_3->addWidget(dateEdit);
+        horizontalLayout_3->addWidget(joineddate);
 
 
         verticalLayout_3->addWidget(widget_3);
@@ -180,46 +176,31 @@ public:
         widget_4->setObjectName(QString::fromUtf8("widget_4"));
         horizontalLayout_4 = new QHBoxLayout(widget_4);
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
-        label_4 = new QLabel(widget_4);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setFont(font);
-
-        horizontalLayout_4->addWidget(label_4);
-
-        comboBox = new QComboBox(widget_4);
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setFont(font);
-
-        horizontalLayout_4->addWidget(comboBox);
-
 
         verticalLayout_3->addWidget(widget_4);
 
-        groupBox = new QGroupBox(groupBox_all);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        gender = new QGroupBox(groupBox_all);
+        gender->setObjectName(QString::fromUtf8("gender"));
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
-        groupBox->setSizePolicy(sizePolicy);
-        groupBox->setFont(font);
-        verticalLayout = new QVBoxLayout(groupBox);
+        sizePolicy.setHeightForWidth(gender->sizePolicy().hasHeightForWidth());
+        gender->setSizePolicy(sizePolicy);
+        gender->setFont(font);
+        verticalLayout = new QVBoxLayout(gender);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        boy = new QRadioButton(groupBox);
+        boy = new QRadioButton(gender);
         boy->setObjectName(QString::fromUtf8("boy"));
 
         verticalLayout->addWidget(boy);
 
-        girl = new QRadioButton(groupBox);
+        girl = new QRadioButton(gender);
         girl->setObjectName(QString::fromUtf8("girl"));
 
         verticalLayout->addWidget(girl);
 
 
-        verticalLayout_3->addWidget(groupBox);
+        verticalLayout_3->addWidget(gender);
 
         groupBox_2 = new QGroupBox(groupBox_all);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
@@ -231,15 +212,15 @@ public:
 
         gridLayout->addWidget(label_6, 2, 0, 1, 1);
 
-        lineEdit_3 = new QLineEdit(groupBox_2);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+        email = new QLineEdit(groupBox_2);
+        email->setObjectName(QString::fromUtf8("email"));
 
-        gridLayout->addWidget(lineEdit_3, 0, 1, 1, 1);
+        gridLayout->addWidget(email, 0, 1, 1, 1);
 
-        lineEdit_4 = new QLineEdit(groupBox_2);
-        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
+        phone = new QLineEdit(groupBox_2);
+        phone->setObjectName(QString::fromUtf8("phone"));
 
-        gridLayout->addWidget(lineEdit_4, 2, 1, 1, 1);
+        gridLayout->addWidget(phone, 2, 1, 1, 1);
 
         label_5 = new QLabel(groupBox_2);
         label_5->setObjectName(QString::fromUtf8("label_5"));
@@ -263,15 +244,15 @@ public:
 
         gridLayout_2->addWidget(label_7, 2, 0, 1, 1);
 
-        lineEdit_6 = new QLineEdit(groupBox_5);
-        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
+        old_password = new QLineEdit(groupBox_5);
+        old_password->setObjectName(QString::fromUtf8("old_password"));
 
-        gridLayout_2->addWidget(lineEdit_6, 0, 1, 1, 1);
+        gridLayout_2->addWidget(old_password, 0, 1, 1, 1);
 
-        lineEdit_7 = new QLineEdit(groupBox_5);
-        lineEdit_7->setObjectName(QString::fromUtf8("lineEdit_7"));
+        new_password = new QLineEdit(groupBox_5);
+        new_password->setObjectName(QString::fromUtf8("new_password"));
 
-        gridLayout_2->addWidget(lineEdit_7, 2, 1, 1, 1);
+        gridLayout_2->addWidget(new_password, 2, 1, 1, 1);
 
         label_8 = new QLabel(groupBox_5);
         label_8->setObjectName(QString::fromUtf8("label_8"));
@@ -285,37 +266,37 @@ public:
 
         verticalLayout_3->addWidget(groupBox_5);
 
-        groupBox_3 = new QGroupBox(groupBox_all);
-        groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setFont(font);
-        verticalLayout_2 = new QVBoxLayout(groupBox_3);
+        job = new QGroupBox(groupBox_all);
+        job->setObjectName(QString::fromUtf8("job"));
+        job->setFont(font);
+        verticalLayout_2 = new QVBoxLayout(job);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        radioButton = new QRadioButton(groupBox_3);
-        radioButton->setObjectName(QString::fromUtf8("radioButton"));
+        repair = new QRadioButton(job);
+        repair->setObjectName(QString::fromUtf8("repair"));
 
-        verticalLayout_2->addWidget(radioButton);
+        verticalLayout_2->addWidget(repair);
 
-        radioButton_2 = new QRadioButton(groupBox_3);
-        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
+        administration = new QRadioButton(job);
+        administration->setObjectName(QString::fromUtf8("administration"));
 
-        verticalLayout_2->addWidget(radioButton_2);
-
-        radioButton_3 = new QRadioButton(groupBox_3);
-        radioButton_3->setObjectName(QString::fromUtf8("radioButton_3"));
-
-        verticalLayout_2->addWidget(radioButton_3);
+        verticalLayout_2->addWidget(administration);
 
 
-        verticalLayout_3->addWidget(groupBox_3);
+        verticalLayout_3->addWidget(job);
 
-        pushButton_2 = new QPushButton(groupBox_all);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        delete_2 = new MyPushButton1(groupBox_all);
+        delete_2->setObjectName(QString::fromUtf8("delete_2"));
+
+        verticalLayout_3->addWidget(delete_2);
+
+        modify = new MyPushButton1(groupBox_all);
+        modify->setObjectName(QString::fromUtf8("modify"));
         QFont font2;
         font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font2.setPointSize(13);
-        pushButton_2->setFont(font2);
+        modify->setFont(font2);
 
-        verticalLayout_3->addWidget(pushButton_2);
+        verticalLayout_3->addWidget(modify);
 
 
         gridLayout_3->addWidget(groupBox_all, 1, 1, 1, 1);
@@ -352,20 +333,20 @@ public:
         widget_5->setObjectName(QString::fromUtf8("widget_5"));
         horizontalLayout_5 = new QHBoxLayout(widget_5);
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
-        lineEdit_5 = new QLineEdit(widget_5);
-        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
+        search_lineEdit = new QLineEdit(widget_5);
+        search_lineEdit->setObjectName(QString::fromUtf8("search_lineEdit"));
         QFont font3;
         font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font3.setPointSize(12);
-        lineEdit_5->setFont(font3);
+        search_lineEdit->setFont(font3);
 
-        horizontalLayout_5->addWidget(lineEdit_5);
+        horizontalLayout_5->addWidget(search_lineEdit);
 
-        pushButton = new QPushButton(widget_5);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setFont(font2);
+        search = new MyPushButton1(widget_5);
+        search->setObjectName(QString::fromUtf8("search"));
+        search->setFont(font2);
 
-        horizontalLayout_5->addWidget(pushButton);
+        horizontalLayout_5->addWidget(search);
 
 
         verticalLayout_5->addWidget(widget_5);
@@ -375,10 +356,10 @@ public:
         groupBox_4->setFont(font);
         verticalLayout_4 = new QVBoxLayout(groupBox_4);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        tableWidget = new QTableWidget(groupBox_4);
-        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+        operation_record = new QTextEdit(groupBox_4);
+        operation_record->setObjectName(QString::fromUtf8("operation_record"));
 
-        verticalLayout_4->addWidget(tableWidget);
+        verticalLayout_4->addWidget(operation_record);
 
 
         verticalLayout_5->addWidget(groupBox_4);
@@ -399,12 +380,7 @@ public:
         label->setText(QApplication::translate("user_management", "\345\247\223\345\220\215\357\274\232", nullptr));
         label_2->setText(QApplication::translate("user_management", "\345\267\245\345\217\267\357\274\232", nullptr));
         label_3->setText(QApplication::translate("user_management", "\345\205\245\350\201\214\346\227\245\346\234\237\357\274\232", nullptr));
-        label_4->setText(QApplication::translate("user_management", "\350\201\214\344\275\215\357\274\232", nullptr));
-        comboBox->setItemText(0, QApplication::translate("user_management", "\347\273\264\344\277\256\345\221\230", nullptr));
-        comboBox->setItemText(1, QApplication::translate("user_management", "\350\256\276\350\256\241\345\221\230", nullptr));
-        comboBox->setItemText(2, QApplication::translate("user_management", "\347\256\241\347\220\206\345\221\230", nullptr));
-
-        groupBox->setTitle(QApplication::translate("user_management", "\346\200\247\345\210\253", nullptr));
+        gender->setTitle(QApplication::translate("user_management", "\346\200\247\345\210\253", nullptr));
         boy->setText(QApplication::translate("user_management", "      \347\224\267", nullptr));
         girl->setText(QApplication::translate("user_management", "      \345\245\263", nullptr));
         groupBox_2->setTitle(QApplication::translate("user_management", "\350\201\224\347\263\273\346\226\271\345\274\217", nullptr));
@@ -413,12 +389,13 @@ public:
         groupBox_5->setTitle(QApplication::translate("user_management", "\345\257\206\347\240\201\344\277\256\346\224\271", nullptr));
         label_7->setText(QApplication::translate("user_management", "\346\226\260\345\257\206\347\240\201\357\274\232", nullptr));
         label_8->setText(QApplication::translate("user_management", "\346\227\247\345\257\206\347\240\201\357\274\232", nullptr));
-        groupBox_3->setTitle(QApplication::translate("user_management", "\346\235\203\351\231\220", nullptr));
-        radioButton->setText(QApplication::translate("user_management", "\347\273\264\344\277\256\345\221\230", nullptr));
-        radioButton_2->setText(QApplication::translate("user_management", "\350\256\276\350\256\241\345\221\230", nullptr));
-        radioButton_3->setText(QApplication::translate("user_management", "\347\256\241\347\220\206\345\221\230", nullptr));
-        pushButton_2->setText(QApplication::translate("user_management", "\344\277\256\346\224\271\346\217\220\344\272\244", nullptr));
-        pushButton->setText(QApplication::translate("user_management", "\346\220\234\347\264\242", nullptr));
+        job->setTitle(QApplication::translate("user_management", "\346\235\203\351\231\220", nullptr));
+        repair->setText(QApplication::translate("user_management", "\347\273\264\344\277\256\345\221\230", nullptr));
+        administration->setText(QApplication::translate("user_management", "\347\256\241\347\220\206\345\221\230", nullptr));
+        delete_2->setText(QApplication::translate("user_management", "\345\210\240\351\231\244", nullptr));
+        modify->setText(QApplication::translate("user_management", "\344\277\256\346\224\271", nullptr));
+        search_lineEdit->setPlaceholderText(QApplication::translate("user_management", "\350\257\267\346\214\211\345\267\245\345\217\267\350\277\233\350\241\214\346\220\234\347\264\242", nullptr));
+        search->setText(QApplication::translate("user_management", "\346\220\234\347\264\242", nullptr));
         groupBox_4->setTitle(QApplication::translate("user_management", "\346\223\215\344\275\234\350\256\260\345\275\225", nullptr));
     } // retranslateUi
 

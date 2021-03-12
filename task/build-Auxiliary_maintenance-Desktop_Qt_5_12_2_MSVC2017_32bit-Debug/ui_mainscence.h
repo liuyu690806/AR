@@ -89,6 +89,12 @@ public:
         new QTreeWidgetItem(__qtreewidgetitem1);
         new QTreeWidgetItem(treeWidget);
         treeWidget->setObjectName(QString::fromUtf8("treeWidget"));
+        QFont font;
+        font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font.setPointSize(12);
+        font.setBold(true);
+        font.setWeight(75);
+        treeWidget->setFont(font);
 
         verticalLayout->addWidget(treeWidget);
 
@@ -102,13 +108,19 @@ public:
         new QListWidgetItem(listWidget);
         new QListWidgetItem(listWidget);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font1.setPointSize(10);
+        font1.setBold(true);
+        font1.setWeight(75);
+        listWidget->setFont(font1);
 
         verticalLayout->addWidget(listWidget);
 
         mainscence->setCentralWidget(centralwidget);
         menubar = new QMenuBar(mainscence);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 17));
+        menubar->setGeometry(QRect(0, 0, 800, 23));
         menu = new QMenu(menubar);
         menu->setObjectName(QString::fromUtf8("menu"));
         menu_2 = new QMenu(menubar);

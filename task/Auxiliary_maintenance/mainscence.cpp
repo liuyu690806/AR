@@ -4,6 +4,8 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QCloseEvent>
+#include "myinterface.h"
+#include <QMetaEnum>
 #pragma execution_character_set("utf-8")
 mainscence::mainscence(QWidget *parent) :
     QMainWindow(parent),
@@ -28,12 +30,8 @@ mainscence::mainscence(QWidget *parent) :
      //3个控件的widget
      ui->widget_left->setFixedSize(300,screenRect.height());
      ui->widget_left->move(0,0);
-     //ui->widget_left->setParent(this);
-     //treewidget
-     //m_maskscence = new maintenance_mask;
-
      ui->treeWidget->setFixedSize(300,screenRect.height()/2-60);
-     ui->treeWidget->setFont(QFont("微软雅黑",12,QFont::Bold));
+     ui->treeWidget->setFont(QFont("微软雅黑",14,QFont::Bold));
      ui->treeWidget->setHeaderLabels(QStringList()<<"功能模块");
      ui->treeWidget->setStyleSheet("QHeaderView::section{ color:white;  height:45px;  background-color:rgb(0,0,0,200);}"
                                     "QTreeView::item:hover{background-color:rgb(200,200,200,120);}"
@@ -55,7 +53,7 @@ mainscence::mainscence(QWidget *parent) :
      //listwidget最近维修视频目录
      ui->listWidget->setFixedSize(ui->widget_left->width(),(screenRect.height()-ui->treeWidget->height()));
      ui->listWidget->move(0,ui->treeWidget->height());
-     ui->listWidget->setFont(QFont("微软雅黑",10,QFont::Bold));
+     ui->listWidget->setFont(QFont("微软雅黑",12,QFont::Bold));
      ui->listWidget->setStyleSheet( "QListWidget::item:hover{background-color:rgb(200,200,200,120);}"
                                     "QListWidget::item:selected{background: #1E90FF;}"
                                     "QListWidget::item{margin:8px;}"
@@ -76,44 +74,78 @@ void mainscence::selectitems1(QTreeWidgetItem * in1,int in2)
 {
     if(in1->childCount()!=0)
     {
-        qDebug()<<"根节点，继续操作";
+        //qDebug()<<"根节点，继续操作";
     }
     else
     {
-        //清空当前场景
-        if( m_maskscence!=NULL)
+        QMetaEnum metaEnum = QMetaEnum::fromType<Myinterface::Priority>();
+        if(scence==""){}
+        else
         {
-           this->m_maskscence->close();
-           setAttribute(Qt::WA_DeleteOnClose);
-        }
-        if(m_managescence!=NULL)
-        {
-            this->m_managescence->close();
-            setAttribute(Qt::WA_DeleteOnClose);
-        }
-        if(v_queryscence!=NULL)
-        {
-            this->v_queryscence->close();
-            setAttribute(Qt::WA_DeleteOnClose);
-        }
-        if(p_infscence!=NULL)
-        {
-            this->p_infscence->close();
-            setAttribute(Qt::WA_DeleteOnClose);
-        }
-        if(u_managescence!=NULL)
-        {
-            this->u_managescence->close();
-            setAttribute(Qt::WA_DeleteOnClose);
-        }
+            QByteArray ba=scence.toLatin1();
+            const char * c_scence=ba.data();
+            //qDebug()<<c_scence;
+            switch (metaEnum.keyToValue(c_scence)) {
+            case 1:
+                this->p_infscence->close();
+                setAttribute(Qt::WA_DeleteOnClose);
+                break;
+            case 2:
+                this->u_managescence->close();
+                setAttribute(Qt::WA_DeleteOnClose);
+                break;
+            case 3:
+                this->m_managescence->close();
+                setAttribute(Qt::WA_DeleteOnClose);
+                break;
+            case 4:
+                this->v_queryscence->close();
+                setAttribute(Qt::WA_DeleteOnClose);
+                break;
+            case 5:
+                break;
+            case 6:
+                this->m_maskscence->close();
+                setAttribute(Qt::WA_DeleteOnClose);
+                break;
+            default:
+                break;
 
-
+            }
+        }
+//        //清空当前场景
+//        if( m_maskscence!=NULL)
+//        {
+//           this->m_maskscence->close();
+//           setAttribute(Qt::WA_DeleteOnClose);
+//        }
+//        if(m_managescence!=NULL)
+//        {
+//            this->m_managescence->close();
+//            setAttribute(Qt::WA_DeleteOnClose);
+//        }
+//        if(v_queryscence!=NULL)
+//        {
+//            this->v_queryscence->close();
+//            setAttribute(Qt::WA_DeleteOnClose);
+//        }
+//        if(p_infscence!=NULL)
+//        {
+//            this->p_infscence->close();
+//            setAttribute(Qt::WA_DeleteOnClose);
+//        }
+//        if(u_managescence!=NULL)
+//        {
+//            this->u_managescence->close();
+//            setAttribute(Qt::WA_DeleteOnClose);
+//        }
         //加载选择场景
         if(in1->text(in2)=="个人信息")
-        {
+        { 
             if(job_num!="0")
             {
-                qDebug()<<"加载个人信息";
+                scence="personal_inf";
+                qDebug()<<job_num<<"个人信息";
                 QTimer::singleShot(400,this,[=](){
                   p_infscence = new personal_inf;
                   connect(this,SIGNAL(send_jobnum_main_to_pinfo(QString)),p_infscence,SLOT(get_jobnum_per(QString)));
@@ -135,9 +167,11 @@ void mainscence::selectitems1(QTreeWidgetItem * in1,int in2)
         }
         else if(in1->text(in2)=="用户管理")
         {
+
             if(job=="管理员"&&(job_num!="0"))
             {
-                qDebug()<<"用户管理";
+                scence="user_management";
+                qDebug()<<job_num<<"用户管理";
                 QTimer::singleShot(400,this,[=](){
                     u_managescence = new user_management;
                     u_managescence->setParent(this);
@@ -155,9 +189,11 @@ void mainscence::selectitems1(QTreeWidgetItem * in1,int in2)
         }
         else if(in1->text(in2)=="标记信息管理")
         {
+
             if(job_num!="0")
             {
-                qDebug()<<"标记信息管理";
+                scence="mask_management";
+                qDebug()<<job_num<<"标记信息管理";
                 QTimer::singleShot(400,this,[=](){
                     m_managescence = new mask_management;
                     m_managescence->setParent(this);
@@ -175,10 +211,12 @@ void mainscence::selectitems1(QTreeWidgetItem * in1,int in2)
         }
         else if(in1->text(in2)=="视频查询")
         {
+
             if(job_num!="0")
             {
-                qDebug()<<"视频查询";
-                QTimer::singleShot(400,this,[=](){
+                scence="vedio_query";
+                qDebug()<<job_num<<"视频查询";
+                QTimer::singleShot(200,this,[=](){
                     v_queryscence = new vedio_query;
                     v_queryscence->setParent(this);
                     v_queryscence->show();
@@ -195,9 +233,11 @@ void mainscence::selectitems1(QTreeWidgetItem * in1,int in2)
         }
         else if(in1->text(in2)=="视频剪辑")
         {
+
             if(job_num!="0")
             {
-                qDebug()<<"视频剪辑";
+                scence="vedio_clip";
+                qDebug()<<job_num<<"视频剪辑";
                 QTimer::singleShot(400,this,[=](){
                     in1->setSelected(false);
                   });
@@ -210,9 +250,11 @@ void mainscence::selectitems1(QTreeWidgetItem * in1,int in2)
         }
         else if(in1->text(in2)=="维修标记")
         {
+
             if(job_num!="0")
             {
-                qDebug()<<"维修标记";
+                scence="maintenance_mask";
+                qDebug()<<job_num<<"维修标记";
                 QTimer::singleShot(400,this,[=](){
                       m_maskscence = new maintenance_mask;
                       m_maskscence->setParent(this);
@@ -231,30 +273,28 @@ void mainscence::selectitems1(QTreeWidgetItem * in1,int in2)
         }
     }
 
-
-
-
 }
 
 
 void mainscence::get_job(QString str)
 {
   job = str;
-  qDebug()<<job<<"主界面";
+  //qDebug()<<job<<"主界面";
 }
 
 
 void mainscence::get_jobnum(QString str)
 {
   job_num = str;
-  qDebug()<<job_num<<"主界面" ;
+  //qDebug()<<job_num<<"主界面" ;
 }
 
-//加载个人信息收集界面
+//加载个人信息收集界面(申请账号)
 void mainscence::get_personal_inf(QString)
 {
-    qDebug()<<"个人信息";
+    qDebug()<<"申请账号，个人信息";
     QTimer::singleShot(200,this,[=](){
+      scence="personal_inf";
       p_infscence = new personal_inf;
       connect(this,SIGNAL(send_jobnum_main_to_pinfo(QString)),p_infscence,SLOT(get_jobnum_per(QString)));
       emit send_jobnum_main_to_pinfo(job_num);
@@ -270,10 +310,15 @@ void mainscence::get_modify_personal_inf(QString str)
    job_num=str;
    connect(this,SIGNAL(send_jobnum_main_to_pinfo(QString)),p_infscence,SLOT(get_jobnum_per(QString)));
    emit send_jobnum_main_to_pinfo(job_num);
-   qDebug()<<"执行了";
+   //qDebug()<<"执行了";
 }
 
 mainscence::~mainscence()
 {
     delete ui;
+    delete m_maskscence;
+    delete m_managescence;
+    delete p_infscence;
+    delete v_queryscence;
+    delete u_managescence;
 }

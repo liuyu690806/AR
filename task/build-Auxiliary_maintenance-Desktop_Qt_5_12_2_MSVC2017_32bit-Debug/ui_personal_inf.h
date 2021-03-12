@@ -17,12 +17,12 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include <mycombobox.h>
+#include <mypushbutton1.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -31,7 +31,7 @@ class Ui_personal_inf
 public:
     QGridLayout *gridLayout_4;
     QSpacerItem *horizontalSpacer_2;
-    QPushButton *sumbit;
+    MyPushButton1 *sumbit;
     QWidget *widget_4;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_4;
@@ -83,7 +83,7 @@ public:
 
         gridLayout_4->addItem(horizontalSpacer_2, 3, 2, 1, 1);
 
-        sumbit = new QPushButton(personal_inf);
+        sumbit = new MyPushButton1(personal_inf);
         sumbit->setObjectName(QString::fromUtf8("sumbit"));
         QFont font;
         font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));

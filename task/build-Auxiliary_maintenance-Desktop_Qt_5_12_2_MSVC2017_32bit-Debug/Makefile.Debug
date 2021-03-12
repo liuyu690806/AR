@@ -59,6 +59,9 @@ SOURCES       = ..\Auxiliary_maintenance\main.cpp \
 		..\Auxiliary_maintenance\playerslider.cpp \
 		..\Auxiliary_maintenance\mylabel.cpp \
 		..\Auxiliary_maintenance\mylabel2.cpp \
+		..\Auxiliary_maintenance\mycombobox.cpp \
+		..\Auxiliary_maintenance\mypushbutton1.cpp \
+		..\Auxiliary_maintenance\myinterface.cpp \
 		..\Auxiliary_maintenance\mycombobox.cpp debug\qrc_res.cpp \
 		debug\moc_sign_in.cpp \
 		debug\moc_mypushbutton.cpp \
@@ -71,7 +74,9 @@ SOURCES       = ..\Auxiliary_maintenance\main.cpp \
 		debug\moc_playerslider.cpp \
 		debug\moc_mylabel.cpp \
 		debug\moc_mylabel2.cpp \
-		debug\moc_mycombobox.cpp
+		debug\moc_mycombobox.cpp \
+		debug\moc_mypushbutton1.cpp \
+		debug\moc_myinterface.cpp
 OBJECTS       = debug\main.obj \
 		debug\sign_in.obj \
 		debug\mypushbutton.obj \
@@ -85,6 +90,9 @@ OBJECTS       = debug\main.obj \
 		debug\mylabel.obj \
 		debug\mylabel2.obj \
 		debug\mycombobox.obj \
+		debug\mypushbutton1.obj \
+		debug\myinterface.obj \
+		debug\mycombobox.obj \
 		debug\qrc_res.obj \
 		debug\moc_sign_in.obj \
 		debug\moc_mypushbutton.obj \
@@ -97,7 +105,9 @@ OBJECTS       = debug\main.obj \
 		debug\moc_playerslider.obj \
 		debug\moc_mylabel.obj \
 		debug\moc_mylabel2.obj \
-		debug\moc_mycombobox.obj
+		debug\moc_mycombobox.obj \
+		debug\moc_mypushbutton1.obj \
+		debug\moc_myinterface.obj
 
 DIST          =  ..\Auxiliary_maintenance\sign_in.h \
 		..\Auxiliary_maintenance\mypushbutton.h \
@@ -110,6 +120,9 @@ DIST          =  ..\Auxiliary_maintenance\sign_in.h \
 		..\Auxiliary_maintenance\playerslider.h \
 		..\Auxiliary_maintenance\mylabel.h \
 		..\Auxiliary_maintenance\mylabel2.h \
+		..\Auxiliary_maintenance\mycombobox.h \
+		..\Auxiliary_maintenance\mypushbutton1.h \
+		..\Auxiliary_maintenance\myinterface.h \
 		..\Auxiliary_maintenance\mycombobox.h ..\Auxiliary_maintenance\main.cpp \
 		..\Auxiliary_maintenance\sign_in.cpp \
 		..\Auxiliary_maintenance\mypushbutton.cpp \
@@ -122,6 +135,9 @@ DIST          =  ..\Auxiliary_maintenance\sign_in.h \
 		..\Auxiliary_maintenance\playerslider.cpp \
 		..\Auxiliary_maintenance\mylabel.cpp \
 		..\Auxiliary_maintenance\mylabel2.cpp \
+		..\Auxiliary_maintenance\mycombobox.cpp \
+		..\Auxiliary_maintenance\mypushbutton1.cpp \
+		..\Auxiliary_maintenance\myinterface.cpp \
 		..\Auxiliary_maintenance\mycombobox.cpp
 QMAKE_TARGET  = Auxiliary_maintenance
 DESTDIR        = debug\ #avoid trailing-slash linebreak
@@ -199,7 +215,7 @@ all: Makefile.Debug  debug\Auxiliary_maintenance.exe
 
 debug\Auxiliary_maintenance.exe: ui_sign_in.h ui_mainscence.h ui_maintenance_mask.h ui_mask_management.h ui_vedio_query.h ui_personal_inf.h ui_user_management.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
-debug\main.obj debug\sign_in.obj debug\mypushbutton.obj debug\mainscence.obj debug\maintenance_mask.obj debug\mask_management.obj debug\vedio_query.obj debug\personal_inf.obj debug\user_management.obj debug\playerslider.obj debug\mylabel.obj debug\mylabel2.obj debug\mycombobox.obj debug\qrc_res.obj debug\moc_sign_in.obj debug\moc_mypushbutton.obj debug\moc_mainscence.obj debug\moc_maintenance_mask.obj debug\moc_mask_management.obj debug\moc_vedio_query.obj debug\moc_personal_inf.obj debug\moc_user_management.obj debug\moc_playerslider.obj debug\moc_mylabel.obj debug\moc_mylabel2.obj debug\moc_mycombobox.obj
+debug\main.obj debug\sign_in.obj debug\mypushbutton.obj debug\mainscence.obj debug\maintenance_mask.obj debug\mask_management.obj debug\vedio_query.obj debug\personal_inf.obj debug\user_management.obj debug\playerslider.obj debug\mylabel.obj debug\mylabel2.obj debug\mycombobox.obj debug\mypushbutton1.obj debug\myinterface.obj debug\mycombobox.obj debug\qrc_res.obj debug\moc_sign_in.obj debug\moc_mypushbutton.obj debug\moc_mainscence.obj debug\moc_maintenance_mask.obj debug\moc_mask_management.obj debug\moc_vedio_query.obj debug\moc_personal_inf.obj debug\moc_user_management.obj debug\moc_playerslider.obj debug\moc_mylabel.obj debug\moc_mylabel2.obj debug\moc_mycombobox.obj debug\moc_mypushbutton1.obj debug\moc_myinterface.obj
 $(LIBS)
 <<
 
@@ -209,10 +225,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) Auxiliary_maintenance.zip $(SOURCES) $(DIST) ..\Auxiliary_maintenance\Auxiliary_maintenance.pro D:\QT\qt\5.12.2\msvc2017\mkspecs\features\spec_pre.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\common\angle.conf D:\QT\qt\5.12.2\msvc2017\mkspecs\common\windows-vulkan.conf D:\QT\qt\5.12.2\msvc2017\mkspecs\common\msvc-desktop.conf D:\QT\qt\5.12.2\msvc2017\mkspecs\qconfig.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3danimation.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3danimation_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dcore.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dcore_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dextras.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dextras_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dinput.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dinput_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dlogic.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dlogic_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquick.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquick_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickanimation.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickanimation_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickextras.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickextras_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickinput.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickinput_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickrender.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickrender_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickscene2d.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickscene2d_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3drender.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3drender_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_accessibility_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_axbase.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_axbase_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_axcontainer.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_axcontainer_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_axserver.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_axserver_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_bluetooth.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_bluetooth_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_bootstrap_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_charts.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_charts_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_concurrent.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_concurrent_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_core.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_core_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_datavisualization.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_datavisualization_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_dbus.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_dbus_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_designer.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_designer_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_designercomponents_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_edid_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_egl_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_fb_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_fontdatabase_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_gamepad.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_gamepad_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_gui.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_gui_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_help.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_help_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_location.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_location_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_multimedia.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_multimedia_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_multimediawidgets.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_network.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_network_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_networkauth.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_networkauth_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_nfc.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_nfc_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_opengl.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_opengl_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_openglextensions.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_openglextensions_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_platformcompositor_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_positioning.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_positioning_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_positioningquick.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_positioningquick_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_printsupport.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_printsupport_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_purchasing.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_purchasing_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_qml.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_qml_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_qmldebug_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_qmltest.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_qmltest_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quick.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quick_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quickcontrols2.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quickparticles_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quickshapes_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quickwidgets.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_remoteobjects.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_remoteobjects_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_repparser.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_repparser_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_script.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_script_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_scripttools.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_scripttools_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_scxml.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_scxml_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_sensors.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_sensors_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_serialbus.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_serialbus_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_serialport.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_serialport_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_sql.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_sql_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_svg.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_svg_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_testlib.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_testlib_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_texttospeech.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_texttospeech_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_theme_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_uiplugin.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_uitools.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_uitools_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_virtualkeyboard.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_virtualkeyboard_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_vulkan_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webchannel.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webchannel_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webengine.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webengine_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webenginecore.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webenginecore_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webenginewidgets.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webenginewidgets_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_websockets.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_websockets_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webview.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webview_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_widgets.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_widgets_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_winextras.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_winextras_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_xml.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_xml_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_xmlpatterns.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_zlib_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\features\qt_functions.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\qt_config.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\win32-msvc\qmake.conf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\spec_post.prf .qmake.stash D:\QT\qt\5.12.2\msvc2017\mkspecs\features\exclusive_builds.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\common\msvc-version.conf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\toolchain.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\default_pre.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\win32\default_pre.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\resolve_config.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\exclusive_builds_post.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\default_post.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\build_pass.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\qml_debug.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\precompile_header.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\warn_on.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\qt.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\resources.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\moc.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\win32\opengl.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\uic.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\qmake_use.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\file_copies.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\win32\windows.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\testcase_targets.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\exceptions.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\yacc.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\lex.prf ..\Auxiliary_maintenance\Auxiliary_maintenance.pro ..\Auxiliary_maintenance\res.qrc D:\QT\qt\5.12.2\msvc2017\lib\Qt5MultimediaWidgetsd.prl D:\QT\qt\5.12.2\msvc2017\lib\Qt5Multimediad.prl D:\QT\qt\5.12.2\msvc2017\lib\Qt5Widgetsd.prl D:\QT\qt\5.12.2\msvc2017\lib\Qt5Guid.prl D:\QT\qt\5.12.2\msvc2017\lib\Qt5Networkd.prl D:\QT\qt\5.12.2\msvc2017\lib\Qt5Sqld.prl D:\QT\qt\5.12.2\msvc2017\lib\Qt5Cored.prl D:\QT\qt\5.12.2\msvc2017\lib\qtmaind.prl   ..\Auxiliary_maintenance\res.qrc D:\QT\qt\5.12.2\msvc2017\mkspecs\features\data\dummy.cpp ..\Auxiliary_maintenance\sign_in.h ..\Auxiliary_maintenance\mypushbutton.h ..\Auxiliary_maintenance\mainscence.h ..\Auxiliary_maintenance\maintenance_mask.h ..\Auxiliary_maintenance\mask_management.h ..\Auxiliary_maintenance\vedio_query.h ..\Auxiliary_maintenance\personal_inf.h ..\Auxiliary_maintenance\user_management.h ..\Auxiliary_maintenance\playerslider.h ..\Auxiliary_maintenance\mylabel.h ..\Auxiliary_maintenance\mylabel2.h ..\Auxiliary_maintenance\mycombobox.h  ..\Auxiliary_maintenance\main.cpp ..\Auxiliary_maintenance\sign_in.cpp ..\Auxiliary_maintenance\mypushbutton.cpp ..\Auxiliary_maintenance\mainscence.cpp ..\Auxiliary_maintenance\maintenance_mask.cpp ..\Auxiliary_maintenance\mask_management.cpp ..\Auxiliary_maintenance\vedio_query.cpp ..\Auxiliary_maintenance\personal_inf.cpp ..\Auxiliary_maintenance\user_management.cpp ..\Auxiliary_maintenance\playerslider.cpp ..\Auxiliary_maintenance\mylabel.cpp ..\Auxiliary_maintenance\mylabel2.cpp ..\Auxiliary_maintenance\mycombobox.cpp ..\Auxiliary_maintenance\sign_in.ui ..\Auxiliary_maintenance\mainscence.ui ..\Auxiliary_maintenance\maintenance_mask.ui ..\Auxiliary_maintenance\mask_management.ui ..\Auxiliary_maintenance\vedio_query.ui ..\Auxiliary_maintenance\personal_inf.ui ..\Auxiliary_maintenance\user_management.ui    
+	$(ZIP) Auxiliary_maintenance.zip $(SOURCES) $(DIST) ..\Auxiliary_maintenance\Auxiliary_maintenance.pro D:\QT\qt\5.12.2\msvc2017\mkspecs\features\spec_pre.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\common\angle.conf D:\QT\qt\5.12.2\msvc2017\mkspecs\common\windows-vulkan.conf D:\QT\qt\5.12.2\msvc2017\mkspecs\common\msvc-desktop.conf D:\QT\qt\5.12.2\msvc2017\mkspecs\qconfig.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3danimation.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3danimation_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dcore.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dcore_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dextras.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dextras_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dinput.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dinput_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dlogic.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dlogic_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquick.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquick_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickanimation.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickanimation_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickextras.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickextras_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickinput.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickinput_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickrender.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickrender_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickscene2d.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3dquickscene2d_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3drender.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_3drender_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_accessibility_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_axbase.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_axbase_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_axcontainer.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_axcontainer_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_axserver.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_axserver_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_bluetooth.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_bluetooth_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_bootstrap_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_charts.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_charts_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_concurrent.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_concurrent_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_core.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_core_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_datavisualization.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_datavisualization_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_dbus.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_dbus_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_designer.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_designer_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_designercomponents_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_edid_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_egl_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_fb_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_fontdatabase_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_gamepad.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_gamepad_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_gui.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_gui_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_help.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_help_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_location.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_location_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_multimedia.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_multimedia_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_multimediawidgets.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_network.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_network_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_networkauth.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_networkauth_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_nfc.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_nfc_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_opengl.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_opengl_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_openglextensions.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_openglextensions_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_platformcompositor_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_positioning.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_positioning_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_positioningquick.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_positioningquick_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_printsupport.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_printsupport_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_purchasing.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_purchasing_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_qml.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_qml_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_qmldebug_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_qmltest.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_qmltest_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quick.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quick_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quickcontrols2.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quickparticles_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quickshapes_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quickwidgets.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_remoteobjects.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_remoteobjects_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_repparser.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_repparser_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_script.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_script_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_scripttools.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_scripttools_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_scxml.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_scxml_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_sensors.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_sensors_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_serialbus.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_serialbus_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_serialport.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_serialport_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_sql.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_sql_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_svg.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_svg_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_testlib.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_testlib_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_texttospeech.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_texttospeech_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_theme_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_uiplugin.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_uitools.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_uitools_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_virtualkeyboard.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_virtualkeyboard_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_vulkan_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webchannel.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webchannel_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webengine.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webengine_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webenginecore.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webenginecore_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webenginewidgets.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webenginewidgets_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_websockets.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_websockets_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webview.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_webview_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_widgets.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_widgets_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_winextras.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_winextras_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_xml.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_xml_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_xmlpatterns.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\modules\qt_lib_zlib_private.pri D:\QT\qt\5.12.2\msvc2017\mkspecs\features\qt_functions.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\qt_config.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\win32-msvc\qmake.conf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\spec_post.prf .qmake.stash D:\QT\qt\5.12.2\msvc2017\mkspecs\features\exclusive_builds.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\common\msvc-version.conf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\toolchain.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\default_pre.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\win32\default_pre.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\resolve_config.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\exclusive_builds_post.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\default_post.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\build_pass.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\qml_debug.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\precompile_header.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\warn_on.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\qt.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\resources.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\moc.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\win32\opengl.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\uic.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\qmake_use.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\file_copies.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\win32\windows.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\testcase_targets.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\exceptions.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\yacc.prf D:\QT\qt\5.12.2\msvc2017\mkspecs\features\lex.prf ..\Auxiliary_maintenance\Auxiliary_maintenance.pro ..\Auxiliary_maintenance\res.qrc D:\QT\qt\5.12.2\msvc2017\lib\Qt5MultimediaWidgetsd.prl D:\QT\qt\5.12.2\msvc2017\lib\Qt5Multimediad.prl D:\QT\qt\5.12.2\msvc2017\lib\Qt5Widgetsd.prl D:\QT\qt\5.12.2\msvc2017\lib\Qt5Guid.prl D:\QT\qt\5.12.2\msvc2017\lib\Qt5Networkd.prl D:\QT\qt\5.12.2\msvc2017\lib\Qt5Sqld.prl D:\QT\qt\5.12.2\msvc2017\lib\Qt5Cored.prl D:\QT\qt\5.12.2\msvc2017\lib\qtmaind.prl   ..\Auxiliary_maintenance\res.qrc D:\QT\qt\5.12.2\msvc2017\mkspecs\features\data\dummy.cpp ..\Auxiliary_maintenance\sign_in.h ..\Auxiliary_maintenance\mypushbutton.h ..\Auxiliary_maintenance\mainscence.h ..\Auxiliary_maintenance\maintenance_mask.h ..\Auxiliary_maintenance\mask_management.h ..\Auxiliary_maintenance\vedio_query.h ..\Auxiliary_maintenance\personal_inf.h ..\Auxiliary_maintenance\user_management.h ..\Auxiliary_maintenance\playerslider.h ..\Auxiliary_maintenance\mylabel.h ..\Auxiliary_maintenance\mylabel2.h ..\Auxiliary_maintenance\mycombobox.h ..\Auxiliary_maintenance\mypushbutton1.h ..\Auxiliary_maintenance\myinterface.h ..\Auxiliary_maintenance\mycombobox.h  ..\Auxiliary_maintenance\main.cpp ..\Auxiliary_maintenance\sign_in.cpp ..\Auxiliary_maintenance\mypushbutton.cpp ..\Auxiliary_maintenance\mainscence.cpp ..\Auxiliary_maintenance\maintenance_mask.cpp ..\Auxiliary_maintenance\mask_management.cpp ..\Auxiliary_maintenance\vedio_query.cpp ..\Auxiliary_maintenance\personal_inf.cpp ..\Auxiliary_maintenance\user_management.cpp ..\Auxiliary_maintenance\playerslider.cpp ..\Auxiliary_maintenance\mylabel.cpp ..\Auxiliary_maintenance\mylabel2.cpp ..\Auxiliary_maintenance\mycombobox.cpp ..\Auxiliary_maintenance\mypushbutton1.cpp ..\Auxiliary_maintenance\myinterface.cpp ..\Auxiliary_maintenance\mycombobox.cpp ..\Auxiliary_maintenance\sign_in.ui ..\Auxiliary_maintenance\mainscence.ui ..\Auxiliary_maintenance\maintenance_mask.ui ..\Auxiliary_maintenance\mask_management.ui ..\Auxiliary_maintenance\vedio_query.ui ..\Auxiliary_maintenance\personal_inf.ui ..\Auxiliary_maintenance\user_management.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\main.obj debug\sign_in.obj debug\mypushbutton.obj debug\mainscence.obj debug\maintenance_mask.obj debug\mask_management.obj debug\vedio_query.obj debug\personal_inf.obj debug\user_management.obj debug\playerslider.obj debug\mylabel.obj debug\mylabel2.obj debug\mycombobox.obj debug\qrc_res.obj debug\moc_sign_in.obj debug\moc_mypushbutton.obj debug\moc_mainscence.obj debug\moc_maintenance_mask.obj debug\moc_mask_management.obj debug\moc_vedio_query.obj debug\moc_personal_inf.obj debug\moc_user_management.obj debug\moc_playerslider.obj debug\moc_mylabel.obj debug\moc_mylabel2.obj debug\moc_mycombobox.obj
+	-$(DEL_FILE) debug\main.obj debug\sign_in.obj debug\mypushbutton.obj debug\mainscence.obj debug\maintenance_mask.obj debug\mask_management.obj debug\vedio_query.obj debug\personal_inf.obj debug\user_management.obj debug\playerslider.obj debug\mylabel.obj debug\mylabel2.obj debug\mycombobox.obj debug\mypushbutton1.obj debug\myinterface.obj debug\mycombobox.obj debug\qrc_res.obj debug\moc_sign_in.obj debug\moc_mypushbutton.obj debug\moc_mainscence.obj debug\moc_maintenance_mask.obj debug\moc_mask_management.obj debug\moc_vedio_query.obj debug\moc_personal_inf.obj debug\moc_user_management.obj debug\moc_playerslider.obj debug\moc_mylabel.obj debug\moc_mylabel2.obj debug\moc_mycombobox.obj debug\moc_mypushbutton1.obj debug\moc_myinterface.obj
 	-$(DEL_FILE) debug\Auxiliary_maintenance.exp debug\Auxiliary_maintenance.vc.pdb debug\Auxiliary_maintenance.ilk debug\Auxiliary_maintenance.idb
 
 distclean: clean 
@@ -246,9 +262,9 @@ compiler_moc_predefs_clean:
 debug\moc_predefs.h: D:\QT\qt\5.12.2\msvc2017\mkspecs\features\data\dummy.cpp
 	cl -BxD:\QT\qt\5.12.2\msvc2017\bin\qmake.exe -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zi -MDd -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E D:\QT\qt\5.12.2\msvc2017\mkspecs\features\data\dummy.cpp 2>NUL >debug\moc_predefs.h
 
-compiler_moc_header_make_all: debug\moc_sign_in.cpp debug\moc_mypushbutton.cpp debug\moc_mainscence.cpp debug\moc_maintenance_mask.cpp debug\moc_mask_management.cpp debug\moc_vedio_query.cpp debug\moc_personal_inf.cpp debug\moc_user_management.cpp debug\moc_playerslider.cpp debug\moc_mylabel.cpp debug\moc_mylabel2.cpp debug\moc_mycombobox.cpp
+compiler_moc_header_make_all: debug\moc_sign_in.cpp debug\moc_mypushbutton.cpp debug\moc_mainscence.cpp debug\moc_maintenance_mask.cpp debug\moc_mask_management.cpp debug\moc_vedio_query.cpp debug\moc_personal_inf.cpp debug\moc_user_management.cpp debug\moc_playerslider.cpp debug\moc_mylabel.cpp debug\moc_mylabel2.cpp debug\moc_mycombobox.cpp debug\moc_mypushbutton1.cpp debug\moc_myinterface.cpp debug\moc_mycombobox.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) debug\moc_sign_in.cpp debug\moc_mypushbutton.cpp debug\moc_mainscence.cpp debug\moc_maintenance_mask.cpp debug\moc_mask_management.cpp debug\moc_vedio_query.cpp debug\moc_personal_inf.cpp debug\moc_user_management.cpp debug\moc_playerslider.cpp debug\moc_mylabel.cpp debug\moc_mylabel2.cpp debug\moc_mycombobox.cpp
+	-$(DEL_FILE) debug\moc_sign_in.cpp debug\moc_mypushbutton.cpp debug\moc_mainscence.cpp debug\moc_maintenance_mask.cpp debug\moc_mask_management.cpp debug\moc_vedio_query.cpp debug\moc_personal_inf.cpp debug\moc_user_management.cpp debug\moc_playerslider.cpp debug\moc_mylabel.cpp debug\moc_mylabel2.cpp debug\moc_mycombobox.cpp debug\moc_mypushbutton1.cpp debug\moc_myinterface.cpp debug\moc_mycombobox.cpp
 debug\moc_sign_in.cpp: ..\Auxiliary_maintenance\sign_in.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QMainWindow \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qmainwindow.h \
@@ -1865,6 +1881,27 @@ debug\moc_mask_management.cpp: ..\Auxiliary_maintenance\mask_management.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfiledevice.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvector2d.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtouchdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QTreeWidget \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtreewidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtreeview.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractitemview.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractscrollarea.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qframe.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qabstractitemmodel.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qitemselectionmodel.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractitemdelegate.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qstyleoption.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractspinbox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvalidator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregularexpression.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qicon.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qslider.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractslider.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qstyle.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabbar.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabwidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qrubberband.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtreewidgetitemiterator.h \
 		debug\moc_predefs.h \
 		D:\QT\qt\5.12.2\msvc2017\bin\moc.exe
 	D:\QT\qt\5.12.2\msvc2017\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include E:/svn/AR/task/build-Auxiliary_maintenance-Desktop_Qt_5_12_2_MSVC2017_32bit-Debug/debug/moc_predefs.h -ID:/QT/qt/5.12.2/msvc2017/mkspecs/win32-msvc -IE:/svn/AR/task/Auxiliary_maintenance -ID:/QT/qt/5.12.2/msvc2017/include -ID:/QT/qt/5.12.2/msvc2017/include/QtMultimediaWidgets -ID:/QT/qt/5.12.2/msvc2017/include/QtMultimedia -ID:/QT/qt/5.12.2/msvc2017/include/QtWidgets -ID:/QT/qt/5.12.2/msvc2017/include/QtGui -ID:/QT/qt/5.12.2/msvc2017/include/QtANGLE -ID:/QT/qt/5.12.2/msvc2017/include/QtNetwork -ID:/QT/qt/5.12.2/msvc2017/include/QtSql -ID:/QT/qt/5.12.2/msvc2017/include/QtCore -I. -I"D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"D:\Windows Kits\10\include\10.0.19041.0\ucrt" -I"D:\Windows Kits\10\include\10.0.19041.0\shared" -I"D:\Windows Kits\10\include\10.0.19041.0\um" -I"D:\Windows Kits\10\include\10.0.19041.0\winrt" ..\Auxiliary_maintenance\mask_management.h -o debug\moc_mask_management.cpp
@@ -3179,6 +3216,299 @@ debug\moc_mycombobox.cpp: ..\Auxiliary_maintenance\mycombobox.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qrubberband.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qframe.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qabstractitemmodel.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\QMouseEvent \
+		debug\moc_predefs.h \
+		D:\QT\qt\5.12.2\msvc2017\bin\moc.exe
+	D:\QT\qt\5.12.2\msvc2017\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include E:/svn/AR/task/build-Auxiliary_maintenance-Desktop_Qt_5_12_2_MSVC2017_32bit-Debug/debug/moc_predefs.h -ID:/QT/qt/5.12.2/msvc2017/mkspecs/win32-msvc -IE:/svn/AR/task/Auxiliary_maintenance -ID:/QT/qt/5.12.2/msvc2017/include -ID:/QT/qt/5.12.2/msvc2017/include/QtMultimediaWidgets -ID:/QT/qt/5.12.2/msvc2017/include/QtMultimedia -ID:/QT/qt/5.12.2/msvc2017/include/QtWidgets -ID:/QT/qt/5.12.2/msvc2017/include/QtGui -ID:/QT/qt/5.12.2/msvc2017/include/QtANGLE -ID:/QT/qt/5.12.2/msvc2017/include/QtNetwork -ID:/QT/qt/5.12.2/msvc2017/include/QtSql -ID:/QT/qt/5.12.2/msvc2017/include/QtCore -I. -I"D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"D:\Windows Kits\10\include\10.0.19041.0\ucrt" -I"D:\Windows Kits\10\include\10.0.19041.0\shared" -I"D:\Windows Kits\10\include\10.0.19041.0\um" -I"D:\Windows Kits\10\include\10.0.19041.0\winrt" ..\Auxiliary_maintenance\mycombobox.h -o debug\moc_mycombobox.cpp
+
+debug\moc_mypushbutton1.cpp: ..\Auxiliary_maintenance\mypushbutton1.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QWidget \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qwidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgetsglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtguiglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig-bootstrapped.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtcore-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsystemdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qprocessordetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcompilerdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtypeinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsysinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlogging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qflags.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbasicatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_bootstrap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qgenericatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_cxx11.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_msvc.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobalstatic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmutex.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnumeric.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qversiontagging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtgui-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgets-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnamespace.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs_win.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstring.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qchar.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrefcount.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qarraydata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringliteral.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringview.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringbuilder.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiterator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhashfunctions.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpair.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearraylist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregexp.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringmatcher.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcoreevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qscopedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmetatype.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvarlengtharray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontainerfwd.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmargins.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpaintdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrect.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsize.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpoint.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpalette.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcolor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgb.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgba64.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qbrush.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvector.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qmatrix.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpolygon.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qregion.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdatastream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiodevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qline.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtransform.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpainterpath.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qimage.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixelformat.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qshareddata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhash.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfont.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontmetrics.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qsizepolicy.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcursor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qkeysequence.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvariant.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdebug.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtextstream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlocale.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qset.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontiguouscache.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurlquery.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfile.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfiledevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvector2d.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtouchdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QPushButton \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qpushbutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractbutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qicon.h \
+		debug\moc_predefs.h \
+		D:\QT\qt\5.12.2\msvc2017\bin\moc.exe
+	D:\QT\qt\5.12.2\msvc2017\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include E:/svn/AR/task/build-Auxiliary_maintenance-Desktop_Qt_5_12_2_MSVC2017_32bit-Debug/debug/moc_predefs.h -ID:/QT/qt/5.12.2/msvc2017/mkspecs/win32-msvc -IE:/svn/AR/task/Auxiliary_maintenance -ID:/QT/qt/5.12.2/msvc2017/include -ID:/QT/qt/5.12.2/msvc2017/include/QtMultimediaWidgets -ID:/QT/qt/5.12.2/msvc2017/include/QtMultimedia -ID:/QT/qt/5.12.2/msvc2017/include/QtWidgets -ID:/QT/qt/5.12.2/msvc2017/include/QtGui -ID:/QT/qt/5.12.2/msvc2017/include/QtANGLE -ID:/QT/qt/5.12.2/msvc2017/include/QtNetwork -ID:/QT/qt/5.12.2/msvc2017/include/QtSql -ID:/QT/qt/5.12.2/msvc2017/include/QtCore -I. -I"D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"D:\Windows Kits\10\include\10.0.19041.0\ucrt" -I"D:\Windows Kits\10\include\10.0.19041.0\shared" -I"D:\Windows Kits\10\include\10.0.19041.0\um" -I"D:\Windows Kits\10\include\10.0.19041.0\winrt" ..\Auxiliary_maintenance\mypushbutton1.h -o debug\moc_mypushbutton1.cpp
+
+debug\moc_myinterface.cpp: ..\Auxiliary_maintenance\myinterface.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\QObject \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnamespace.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig-bootstrapped.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtcore-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsystemdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qprocessordetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcompilerdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtypeinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsysinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlogging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qflags.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbasicatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_bootstrap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qgenericatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_cxx11.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_msvc.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobalstatic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmutex.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnumeric.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qversiontagging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstring.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qchar.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrefcount.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qarraydata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringliteral.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringview.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringbuilder.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiterator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhashfunctions.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpair.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearraylist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregexp.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringmatcher.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcoreevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qscopedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmetatype.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvarlengtharray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontainerfwd.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject_impl.h \
+		debug\moc_predefs.h \
+		D:\QT\qt\5.12.2\msvc2017\bin\moc.exe
+	D:\QT\qt\5.12.2\msvc2017\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include E:/svn/AR/task/build-Auxiliary_maintenance-Desktop_Qt_5_12_2_MSVC2017_32bit-Debug/debug/moc_predefs.h -ID:/QT/qt/5.12.2/msvc2017/mkspecs/win32-msvc -IE:/svn/AR/task/Auxiliary_maintenance -ID:/QT/qt/5.12.2/msvc2017/include -ID:/QT/qt/5.12.2/msvc2017/include/QtMultimediaWidgets -ID:/QT/qt/5.12.2/msvc2017/include/QtMultimedia -ID:/QT/qt/5.12.2/msvc2017/include/QtWidgets -ID:/QT/qt/5.12.2/msvc2017/include/QtGui -ID:/QT/qt/5.12.2/msvc2017/include/QtANGLE -ID:/QT/qt/5.12.2/msvc2017/include/QtNetwork -ID:/QT/qt/5.12.2/msvc2017/include/QtSql -ID:/QT/qt/5.12.2/msvc2017/include/QtCore -I. -I"D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"D:\Windows Kits\10\include\10.0.19041.0\ucrt" -I"D:\Windows Kits\10\include\10.0.19041.0\shared" -I"D:\Windows Kits\10\include\10.0.19041.0\um" -I"D:\Windows Kits\10\include\10.0.19041.0\winrt" ..\Auxiliary_maintenance\myinterface.h -o debug\moc_myinterface.cpp
+
+debug\moc_mycombobox.cpp: ..\Auxiliary_maintenance\mycombobox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QWidget \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qwidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgetsglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtguiglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig-bootstrapped.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtcore-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsystemdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qprocessordetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcompilerdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtypeinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsysinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlogging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qflags.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbasicatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_bootstrap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qgenericatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_cxx11.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_msvc.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobalstatic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmutex.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnumeric.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qversiontagging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtgui-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgets-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnamespace.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs_win.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstring.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qchar.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrefcount.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qarraydata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringliteral.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringview.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringbuilder.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiterator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhashfunctions.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpair.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearraylist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregexp.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringmatcher.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcoreevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qscopedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmetatype.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvarlengtharray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontainerfwd.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmargins.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpaintdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrect.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsize.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpoint.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpalette.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcolor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgb.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgba64.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qbrush.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvector.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qmatrix.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpolygon.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qregion.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdatastream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiodevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qline.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtransform.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpainterpath.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qimage.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixelformat.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qshareddata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhash.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfont.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontmetrics.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qsizepolicy.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcursor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qkeysequence.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvariant.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdebug.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtextstream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlocale.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qset.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontiguouscache.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurlquery.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfile.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfiledevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvector2d.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtouchdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QComboBox \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qcombobox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractitemdelegate.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qstyleoption.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractspinbox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvalidator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregularexpression.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qicon.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qslider.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractslider.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qstyle.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabbar.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabwidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qrubberband.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qframe.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qabstractitemmodel.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\QMouseEvent \
 		debug\moc_predefs.h \
 		D:\QT\qt\5.12.2\msvc2017\bin\moc.exe
 	D:\QT\qt\5.12.2\msvc2017\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include E:/svn/AR/task/build-Auxiliary_maintenance-Desktop_Qt_5_12_2_MSVC2017_32bit-Debug/debug/moc_predefs.h -ID:/QT/qt/5.12.2/msvc2017/mkspecs/win32-msvc -IE:/svn/AR/task/Auxiliary_maintenance -ID:/QT/qt/5.12.2/msvc2017/include -ID:/QT/qt/5.12.2/msvc2017/include/QtMultimediaWidgets -ID:/QT/qt/5.12.2/msvc2017/include/QtMultimedia -ID:/QT/qt/5.12.2/msvc2017/include/QtWidgets -ID:/QT/qt/5.12.2/msvc2017/include/QtGui -ID:/QT/qt/5.12.2/msvc2017/include/QtANGLE -ID:/QT/qt/5.12.2/msvc2017/include/QtNetwork -ID:/QT/qt/5.12.2/msvc2017/include/QtSql -ID:/QT/qt/5.12.2/msvc2017/include/QtCore -I. -I"D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"D:\Windows Kits\10\include\10.0.19041.0\ucrt" -I"D:\Windows Kits\10\include\10.0.19041.0\shared" -I"D:\Windows Kits\10\include\10.0.19041.0\um" -I"D:\Windows Kits\10\include\10.0.19041.0\winrt" ..\Auxiliary_maintenance\mycombobox.h -o debug\moc_mycombobox.cpp
@@ -3416,7 +3746,115 @@ ui_maintenance_mask.h: ..\Auxiliary_maintenance\maintenance_mask.ui \
 	D:\QT\qt\5.12.2\msvc2017\bin\uic.exe ..\Auxiliary_maintenance\maintenance_mask.ui -o ui_maintenance_mask.h
 
 ui_mask_management.h: ..\Auxiliary_maintenance\mask_management.ui \
-		D:\QT\qt\5.12.2\msvc2017\bin\uic.exe
+		D:\QT\qt\5.12.2\msvc2017\bin\uic.exe \
+		..\Auxiliary_maintenance\mypushbutton1.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QWidget \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qwidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgetsglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtguiglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig-bootstrapped.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtcore-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsystemdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qprocessordetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcompilerdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtypeinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsysinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlogging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qflags.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbasicatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_bootstrap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qgenericatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_cxx11.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_msvc.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobalstatic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmutex.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnumeric.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qversiontagging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtgui-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgets-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnamespace.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs_win.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstring.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qchar.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrefcount.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qarraydata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringliteral.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringview.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringbuilder.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiterator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhashfunctions.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpair.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearraylist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregexp.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringmatcher.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcoreevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qscopedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmetatype.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvarlengtharray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontainerfwd.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmargins.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpaintdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrect.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsize.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpoint.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpalette.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcolor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgb.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgba64.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qbrush.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvector.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qmatrix.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpolygon.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qregion.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdatastream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiodevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qline.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtransform.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpainterpath.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qimage.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixelformat.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qshareddata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhash.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfont.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontmetrics.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qsizepolicy.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcursor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qkeysequence.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvariant.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdebug.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtextstream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlocale.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qset.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontiguouscache.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurlquery.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfile.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfiledevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvector2d.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtouchdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QPushButton \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qpushbutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractbutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qicon.h
 	D:\QT\qt\5.12.2\msvc2017\bin\uic.exe ..\Auxiliary_maintenance\mask_management.ui -o ui_mask_management.h
 
 ui_vedio_query.h: ..\Auxiliary_maintenance\vedio_query.ui \
@@ -3531,11 +3969,348 @@ ui_vedio_query.h: ..\Auxiliary_maintenance\vedio_query.ui \
 	D:\QT\qt\5.12.2\msvc2017\bin\uic.exe ..\Auxiliary_maintenance\vedio_query.ui -o ui_vedio_query.h
 
 ui_personal_inf.h: ..\Auxiliary_maintenance\personal_inf.ui \
-		D:\QT\qt\5.12.2\msvc2017\bin\uic.exe
+		D:\QT\qt\5.12.2\msvc2017\bin\uic.exe \
+		..\Auxiliary_maintenance\mypushbutton1.h \
+		..\Auxiliary_maintenance\mycombobox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QWidget \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qwidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgetsglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtguiglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig-bootstrapped.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtcore-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsystemdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qprocessordetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcompilerdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtypeinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsysinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlogging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qflags.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbasicatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_bootstrap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qgenericatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_cxx11.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_msvc.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobalstatic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmutex.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnumeric.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qversiontagging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtgui-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgets-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnamespace.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs_win.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstring.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qchar.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrefcount.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qarraydata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringliteral.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringview.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringbuilder.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiterator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhashfunctions.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpair.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearraylist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregexp.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringmatcher.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcoreevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qscopedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmetatype.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvarlengtharray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontainerfwd.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmargins.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpaintdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrect.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsize.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpoint.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpalette.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcolor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgb.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgba64.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qbrush.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvector.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qmatrix.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpolygon.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qregion.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdatastream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiodevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qline.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtransform.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpainterpath.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qimage.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixelformat.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qshareddata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhash.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfont.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontmetrics.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qsizepolicy.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcursor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qkeysequence.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvariant.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdebug.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtextstream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlocale.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qset.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontiguouscache.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurlquery.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfile.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfiledevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvector2d.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtouchdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QPushButton \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qpushbutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractbutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qicon.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QWidget \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qwidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgetsglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtguiglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig-bootstrapped.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtcore-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsystemdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qprocessordetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcompilerdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtypeinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsysinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlogging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qflags.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbasicatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_bootstrap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qgenericatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_cxx11.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_msvc.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobalstatic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmutex.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnumeric.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qversiontagging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtgui-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgets-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnamespace.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs_win.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstring.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qchar.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrefcount.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qarraydata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringliteral.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringview.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringbuilder.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiterator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhashfunctions.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpair.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearraylist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregexp.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringmatcher.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcoreevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qscopedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmetatype.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvarlengtharray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontainerfwd.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmargins.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpaintdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrect.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsize.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpoint.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpalette.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcolor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgb.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgba64.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qbrush.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvector.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qmatrix.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpolygon.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qregion.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdatastream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiodevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qline.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtransform.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpainterpath.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qimage.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixelformat.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qshareddata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhash.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfont.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontmetrics.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qsizepolicy.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcursor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qkeysequence.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvariant.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdebug.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtextstream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlocale.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qset.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontiguouscache.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurlquery.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfile.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfiledevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvector2d.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtouchdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QComboBox \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qcombobox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractitemdelegate.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qstyleoption.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractspinbox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvalidator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregularexpression.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qicon.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qslider.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractslider.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qstyle.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabbar.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabwidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qrubberband.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qframe.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qabstractitemmodel.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\QMouseEvent
 	D:\QT\qt\5.12.2\msvc2017\bin\uic.exe ..\Auxiliary_maintenance\personal_inf.ui -o ui_personal_inf.h
 
 ui_user_management.h: ..\Auxiliary_maintenance\user_management.ui \
-		D:\QT\qt\5.12.2\msvc2017\bin\uic.exe
+		D:\QT\qt\5.12.2\msvc2017\bin\uic.exe \
+		..\Auxiliary_maintenance\mypushbutton1.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QWidget \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qwidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgetsglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtguiglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig-bootstrapped.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtcore-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsystemdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qprocessordetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcompilerdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtypeinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsysinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlogging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qflags.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbasicatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_bootstrap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qgenericatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_cxx11.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_msvc.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobalstatic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmutex.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnumeric.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qversiontagging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtgui-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgets-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnamespace.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs_win.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstring.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qchar.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrefcount.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qarraydata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringliteral.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringview.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringbuilder.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiterator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhashfunctions.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpair.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearraylist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregexp.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringmatcher.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcoreevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qscopedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmetatype.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvarlengtharray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontainerfwd.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmargins.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpaintdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrect.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsize.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpoint.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpalette.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcolor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgb.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgba64.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qbrush.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvector.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qmatrix.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpolygon.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qregion.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdatastream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiodevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qline.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtransform.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpainterpath.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qimage.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixelformat.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qshareddata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhash.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfont.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontmetrics.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qsizepolicy.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcursor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qkeysequence.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvariant.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdebug.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtextstream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlocale.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qset.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontiguouscache.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurlquery.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfile.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfiledevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvector2d.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtouchdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QPushButton \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qpushbutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractbutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qicon.h
 	D:\QT\qt\5.12.2\msvc2017\bin\uic.exe ..\Auxiliary_maintenance\user_management.ui -o ui_user_management.h
 
 compiler_yacc_decl_make_all:
@@ -4193,7 +4968,9 @@ debug\main.obj: ..\Auxiliary_maintenance\main.cpp ..\Auxiliary_maintenance\sign_
 		D:\QT\qt\5.12.2\msvc2017\include\QtSql\QSqlError \
 		D:\QT\qt\5.12.2\msvc2017\include\QtSql\qsqlerror.h \
 		..\Auxiliary_maintenance\user_management.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QApplication
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\QMutex \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\QDateTime \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\QTextStream
 
 debug\sign_in.obj: ..\Auxiliary_maintenance\sign_in.cpp ..\Auxiliary_maintenance\sign_in.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QMainWindow \
@@ -5622,7 +6399,9 @@ debug\mainscence.obj: ..\Auxiliary_maintenance\mainscence.cpp ..\Auxiliary_maint
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QStatusBar \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QVBoxLayout \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QDesktopWidget \
-		D:\QT\qt\5.12.2\msvc2017\include\QtGui\QCloseEvent
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\QCloseEvent \
+		..\Auxiliary_maintenance\myinterface.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\QMetaEnum
 
 debug\maintenance_mask.obj: ..\Auxiliary_maintenance\maintenance_mask.cpp ..\Auxiliary_maintenance\maintenance_mask.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QWidget \
@@ -5879,17 +6658,14 @@ debug\mask_management.obj: ..\Auxiliary_maintenance\mask_management.cpp ..\Auxil
 		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfiledevice.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvector2d.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtouchdevice.h \
-		ui_mask_management.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtCore\QVariant \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QApplication \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qapplication.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcoreapplication.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qeventloop.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qdesktopwidget.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qguiapplication.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qinputmethod.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QComboBox \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qcombobox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QTreeWidget \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtreewidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtreeview.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractitemview.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractscrollarea.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qframe.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qabstractitemmodel.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qitemselectionmodel.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractitemdelegate.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qstyleoption.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractspinbox.h \
@@ -5902,8 +6678,18 @@ debug\mask_management.obj: ..\Auxiliary_maintenance\mask_management.cpp ..\Auxil
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabbar.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabwidget.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qrubberband.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qframe.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qabstractitemmodel.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtreewidgetitemiterator.h \
+		ui_mask_management.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\QVariant \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QApplication \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qapplication.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcoreapplication.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qeventloop.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qdesktopwidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qguiapplication.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qinputmethod.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QComboBox \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qcombobox.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QGridLayout \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qgridlayout.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qlayout.h \
@@ -5914,17 +6700,16 @@ debug\mask_management.obj: ..\Auxiliary_maintenance\mask_management.cpp ..\Auxil
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QHBoxLayout \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QHeaderView \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qheaderview.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractitemview.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractscrollarea.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qitemselectionmodel.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QLabel \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qlabel.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QLineEdit \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qlineedit.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtextcursor.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtextformat.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpen.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtextoption.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QPushButton \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qpushbutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QRadioButton \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qradiobutton.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractbutton.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QTableWidget \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtablewidget.h \
@@ -5932,12 +6717,20 @@ debug\mask_management.obj: ..\Auxiliary_maintenance\mask_management.cpp ..\Auxil
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QTextEdit \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtextedit.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtextdocument.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QTreeWidget \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtreewidget.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtreeview.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtreewidgetitemiterator.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QVBoxLayout \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QDesktopWidget
+		..\Auxiliary_maintenance\mypushbutton1.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QPushButton \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qpushbutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QDesktopWidget \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\QDebug \
+		D:\QT\qt\5.12.2\msvc2017\include\QtSql\QSqlDatabase \
+		D:\QT\qt\5.12.2\msvc2017\include\QtSql\qsqldatabase.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtSql\qtsqlglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtSql\qtsql-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtSql\QSqlQuery \
+		D:\QT\qt\5.12.2\msvc2017\include\QtSql\qsqlquery.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QMessageBox \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qmessagebox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qdialog.h
 
 debug\vedio_query.obj: ..\Auxiliary_maintenance\vedio_query.cpp ..\Auxiliary_maintenance\vedio_query.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QWidget \
@@ -6702,25 +7495,12 @@ debug\personal_inf.obj: ..\Auxiliary_maintenance\personal_inf.cpp ..\Auxiliary_m
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qdesktopwidget.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qguiapplication.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qinputmethod.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QComboBox \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qcombobox.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractitemdelegate.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qstyleoption.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractspinbox.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvalidator.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregularexpression.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qicon.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qslider.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractslider.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qstyle.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabbar.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabwidget.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qrubberband.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qframe.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qabstractitemmodel.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QDateEdit \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qdatetimeedit.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdatetime.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractspinbox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvalidator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregularexpression.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QGridLayout \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qgridlayout.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qlayout.h \
@@ -6728,6 +7508,7 @@ debug\personal_inf.obj: ..\Auxiliary_maintenance\personal_inf.cpp ..\Auxiliary_m
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qboxlayout.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QGroupBox \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qgroupbox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qframe.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QHBoxLayout \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QLabel \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qlabel.h \
@@ -6737,13 +7518,28 @@ debug\personal_inf.obj: ..\Auxiliary_maintenance\personal_inf.cpp ..\Auxiliary_m
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtextformat.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpen.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtextoption.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QPushButton \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qpushbutton.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractbutton.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QRadioButton \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qradiobutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractbutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qicon.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QSpacerItem \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QVBoxLayout \
+		..\Auxiliary_maintenance\mycombobox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QComboBox \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qcombobox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractitemdelegate.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qstyleoption.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qslider.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractslider.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qstyle.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabbar.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabwidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qrubberband.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qabstractitemmodel.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\QMouseEvent \
+		..\Auxiliary_maintenance\mypushbutton1.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QPushButton \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qpushbutton.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QDesktopWidget \
 		D:\QT\qt\5.12.2\msvc2017\include\QtCore\QDebug
 
@@ -6860,25 +7656,12 @@ debug\user_management.obj: ..\Auxiliary_maintenance\user_management.cpp ..\Auxil
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qdesktopwidget.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qguiapplication.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qinputmethod.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QComboBox \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qcombobox.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractitemdelegate.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qstyleoption.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractspinbox.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvalidator.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregularexpression.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qicon.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qslider.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractslider.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qstyle.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabbar.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabwidget.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qrubberband.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qframe.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qabstractitemmodel.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QDateEdit \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qdatetimeedit.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdatetime.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractspinbox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvalidator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregularexpression.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QGridLayout \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qgridlayout.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qlayout.h \
@@ -6886,12 +7669,8 @@ debug\user_management.obj: ..\Auxiliary_maintenance\user_management.cpp ..\Auxil
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qboxlayout.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QGroupBox \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qgroupbox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qframe.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QHBoxLayout \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QHeaderView \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qheaderview.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractitemview.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractscrollarea.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qitemselectionmodel.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QLabel \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qlabel.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QLineEdit \
@@ -6900,17 +7679,33 @@ debug\user_management.obj: ..\Auxiliary_maintenance\user_management.cpp ..\Auxil
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtextformat.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpen.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtextoption.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QPushButton \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qpushbutton.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractbutton.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QRadioButton \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qradiobutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractbutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qicon.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QSpacerItem \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QTableWidget \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtablewidget.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtableview.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QTextEdit \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtextedit.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractscrollarea.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtextdocument.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QVBoxLayout \
-		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QDesktopWidget
+		..\Auxiliary_maintenance\mypushbutton1.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QPushButton \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qpushbutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QDesktopWidget \
+		D:\QT\qt\5.12.2\msvc2017\include\QtSql\QSqlDatabase \
+		D:\QT\qt\5.12.2\msvc2017\include\QtSql\qsqldatabase.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtSql\qtsqlglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtSql\qtsql-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtSql\QSqlQuery \
+		D:\QT\qt\5.12.2\msvc2017\include\QtSql\qsqlquery.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QMessageBox \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qmessagebox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qdialog.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\QDebug \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QButtonGroup \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qbuttongroup.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\QFile
 
 debug\playerslider.obj: ..\Auxiliary_maintenance\playerslider.cpp ..\Auxiliary_maintenance\playerslider.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QWidget \
@@ -7375,7 +8170,296 @@ debug\mycombobox.obj: ..\Auxiliary_maintenance\mycombobox.cpp ..\Auxiliary_maint
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabwidget.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qrubberband.h \
 		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qframe.h \
-		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qabstractitemmodel.h
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qabstractitemmodel.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\QMouseEvent
+
+debug\mypushbutton1.obj: ..\Auxiliary_maintenance\mypushbutton1.cpp ..\Auxiliary_maintenance\mypushbutton1.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QWidget \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qwidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgetsglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtguiglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig-bootstrapped.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtcore-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsystemdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qprocessordetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcompilerdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtypeinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsysinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlogging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qflags.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbasicatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_bootstrap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qgenericatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_cxx11.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_msvc.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobalstatic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmutex.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnumeric.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qversiontagging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtgui-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgets-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnamespace.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs_win.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstring.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qchar.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrefcount.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qarraydata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringliteral.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringview.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringbuilder.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiterator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhashfunctions.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpair.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearraylist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregexp.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringmatcher.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcoreevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qscopedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmetatype.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvarlengtharray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontainerfwd.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmargins.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpaintdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrect.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsize.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpoint.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpalette.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcolor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgb.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgba64.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qbrush.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvector.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qmatrix.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpolygon.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qregion.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdatastream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiodevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qline.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtransform.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpainterpath.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qimage.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixelformat.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qshareddata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhash.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfont.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontmetrics.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qsizepolicy.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcursor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qkeysequence.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvariant.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdebug.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtextstream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlocale.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qset.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontiguouscache.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurlquery.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfile.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfiledevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvector2d.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtouchdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QPushButton \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qpushbutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractbutton.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qicon.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\QPropertyAnimation \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpropertyanimation.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvariantanimation.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qeasingcurve.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qabstractanimation.h
+
+debug\myinterface.obj: ..\Auxiliary_maintenance\myinterface.cpp ..\Auxiliary_maintenance\myinterface.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\QObject \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnamespace.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig-bootstrapped.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtcore-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsystemdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qprocessordetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcompilerdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtypeinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsysinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlogging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qflags.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbasicatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_bootstrap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qgenericatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_cxx11.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_msvc.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobalstatic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmutex.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnumeric.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qversiontagging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstring.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qchar.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrefcount.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qarraydata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringliteral.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringview.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringbuilder.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiterator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhashfunctions.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpair.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearraylist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregexp.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringmatcher.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcoreevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qscopedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmetatype.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvarlengtharray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontainerfwd.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject_impl.h
+
+debug\mycombobox.obj: ..\Auxiliary_maintenance\mycombobox.cpp ..\Auxiliary_maintenance\mycombobox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QWidget \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qwidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgetsglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtguiglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobal.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig-bootstrapped.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qconfig.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtcore-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsystemdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qprocessordetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcompilerdetection.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtypeinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsysinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlogging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qflags.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbasicatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_bootstrap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qgenericatomic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_cxx11.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qatomic_msvc.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qglobalstatic.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmutex.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnumeric.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qversiontagging.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtgui-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtwidgets-config.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qnamespace.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobjectdefs_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qwindowdefs_win.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstring.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qchar.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrefcount.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qarraydata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringliteral.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringview.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringbuilder.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qalgorithms.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiterator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhashfunctions.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpair.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qbytearraylist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringlist.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregexp.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qstringmatcher.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcoreevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qscopedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmetatype.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvarlengtharray.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontainerfwd.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qobject_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmargins.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpaintdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qrect.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsize.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qpoint.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpalette.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcolor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgb.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qrgba64.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qbrush.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvector.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qmatrix.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpolygon.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qregion.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdatastream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qiodevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qline.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtransform.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpainterpath.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qimage.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixelformat.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qpixmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qshareddata.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qhash.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qsharedpointer_impl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfont.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontmetrics.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qfontinfo.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qsizepolicy.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qcursor.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qkeysequence.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qevent.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qvariant.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qmap.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qdebug.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qtextstream.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qlocale.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qset.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qcontiguouscache.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurl.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qurlquery.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfile.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qfiledevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvector2d.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qtouchdevice.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\QComboBox \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qcombobox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractitemdelegate.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qstyleoption.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractspinbox.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qvalidator.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qregularexpression.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\qicon.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qslider.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qabstractslider.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qstyle.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabbar.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qtabwidget.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qrubberband.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtWidgets\qframe.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtCore\qabstractitemmodel.h \
+		D:\QT\qt\5.12.2\msvc2017\include\QtGui\QMouseEvent
 
 debug\qrc_res.obj: debug\qrc_res.cpp 
 
@@ -7402,6 +8486,10 @@ debug\moc_mylabel.obj: debug\moc_mylabel.cpp
 debug\moc_mylabel2.obj: debug\moc_mylabel2.cpp 
 
 debug\moc_mycombobox.obj: debug\moc_mycombobox.cpp 
+
+debug\moc_mypushbutton1.obj: debug\moc_mypushbutton1.cpp 
+
+debug\moc_myinterface.obj: debug\moc_myinterface.cpp 
 
 ####### Install
 

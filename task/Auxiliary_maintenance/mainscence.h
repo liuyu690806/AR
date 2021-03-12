@@ -10,9 +10,7 @@
 #include "vedio_query.h"
 #include "personal_inf.h"
 #include "user_management.h"
-
 #pragma execution_character_set("utf-8")
-
 namespace Ui {
 class mainscence;
 }
@@ -33,23 +31,25 @@ signals:
 
 private:
     //维修标记场景
-    maintenance_mask * m_maskscence=NULL;
+    maintenance_mask * m_maskscence;
 
     //标记管理场景
-    mask_management * m_managescence=NULL;
+    mask_management * m_managescence;
 
     //视频查询场景
-    vedio_query *v_queryscence=NULL;
+    vedio_query *v_queryscence;
 
     //个人信息场景
-    personal_inf * p_infscence=NULL;
+    personal_inf * p_infscence;
 
     //用户管理场景
-    user_management * u_managescence=NULL;
+    user_management * u_managescence;
 
     //登录用户信息
     QString job_num;
     QString job;
+    //场景
+    QString scence;
 
 
 
@@ -73,6 +73,7 @@ public slots:
 
 private:
     Ui::mainscence *ui;
+
 };
 
 #endif // MAINSCENCE_H

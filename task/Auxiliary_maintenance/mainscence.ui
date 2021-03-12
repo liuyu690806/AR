@@ -66,6 +66,14 @@
      </property>
      <item>
       <widget class="QTreeWidget" name="treeWidget">
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
        <column>
         <property name="text">
          <string>1</string>
@@ -125,6 +133,14 @@
      </item>
      <item>
       <widget class="QListWidget" name="listWidget">
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
        <item>
         <property name="text">
          <string>减速器维修             2020.12.21</string>
@@ -146,7 +162,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>17</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">

@@ -147,13 +147,8 @@ void Sign_in::login()
     if(flag)
     {
 
-        qDebug()<<user_name;
-        qDebug()<<job_num;
-        qDebug()<<job;
-        qDebug()<<"登录界面";
-
-
-        QTimer::singleShot(400,this,[=](){
+        qDebug()<<"姓名:"<<user_name<<"工号:"<<job_num<<"权限:"<<job<<"登录";
+        QTimer::singleShot(200,this,[=](){
             //自身隐藏
             this->hide();
             //实列化主场景1
@@ -177,7 +172,7 @@ void Sign_in::login()
 void Sign_in::getpersonal_info()
 {
     QString job_num="0";
-    QTimer::singleShot(400,this,[=](){
+    QTimer::singleShot(200,this,[=](){
         //自身隐藏
         this->hide();
         //实列化主场景1
@@ -189,6 +184,7 @@ void Sign_in::getpersonal_info()
         connect(this,SIGNAL(send_jobnum(QString)),M_scence1,SLOT(get_personal_inf(QString)));
         //connect(this,SIGNAL(send_jobnum(QString)),M_scence1,SLOT(get_jobnum_per(QString)));
         emit send_jobnum(job_num);
+        //qDebug()<<"申请账号";
 
 
     });
