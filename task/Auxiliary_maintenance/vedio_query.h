@@ -33,6 +33,13 @@ public:
     //加载
     bool  m_bReLoad;
 
+    //结构表
+    void structure_Tree(QString root, QTreeWidgetItem *item);  //后续递归调用，插入到父亲节点
+    void structure_Tree(QTreeWidget *tree);       //第一次插入，根节点，最高级部门
+    //tableshow
+    void tableshow();
+
+
 
 public slots:
     //设置进度条播放长度
@@ -47,8 +54,12 @@ private slots:
     void play_pauseBtn_clicked();
     //停止
     void stopBtn_clicked();
-
-   //void fullScr_clicked();
+    //树对象选择
+    void selectitems(QTreeWidgetItem * ,int);
+    //修改text
+    void modify_text();
+    //删除视频
+    void delete_vedio();
 
 private:
     Ui::vedio_query *ui;

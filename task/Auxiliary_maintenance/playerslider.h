@@ -8,7 +8,7 @@ class PlayerSlider : public QSlider
 {
     Q_OBJECT
 public:
-    explicit PlayerSlider(QWidget *parent = 0);
+    explicit PlayerSlider(QWidget *parent = nullptr);
     //保存滑块的当前值，更改该值也会更改滑块位置。
     void setProgress(qint64);
 

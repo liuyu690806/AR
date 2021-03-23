@@ -8,7 +8,6 @@ maintenance_mask::maintenance_mask(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint);
-
     //setWindowFlags(Qt::FramelessWindowHint);//这边就是相当于直接将qt窗体默认的功能全部取消
     QDesktopWidget * desktopWidget=QApplication::desktop();
     QRect screenRect=desktopWidget->screenGeometry();
@@ -21,19 +20,19 @@ maintenance_mask::maintenance_mask(QWidget *parent) :
     ui->widget_vedio->move(0,5);
     ui->widget_vedio->setFixedSize(1080,810);
     ui->widget_vedio->setAutoFillBackground(true);
-    ui->widget_vedio->setPalette(qplte);
-
-    ui->widget_model->setFixedSize(400,300);
-    ui->widget_model->move(1130,5);
-    ui->widget_model->setAutoFillBackground(true);
-    ui->widget_model->setPalette(qplte);
-
-    ui->gb_xr->setFixedSize(400,550);
-    ui->tab_addtag->setFixedHeight(320);
-    ui->gb_xr->move(1130,335);
+    ui->widget_vedio->setPalette(qplte);//视频区
     //计时器
     ui->timeEdit->setFixedSize(200,40);
-    ui->timeEdit->move(885,845);
+    ui->timeEdit->move(885,835);
+
+    ui->verticalLayoutWidget_5->move(1120,5);
+    ui->verticalLayoutWidget_5->setFixedSize(420,900);
+    ui->widget_model->setFixedHeight(200);
+    ui->widget_model->setAutoFillBackground(true);
+    ui->widget_model->setPalette(qplte);
+    ui->gb_xuanran->setFixedHeight(380);
+    ui->gb_vedio_info->setFixedHeight(280);
+    ui->treeWidget->setFixedWidth(150);
 
 }
 

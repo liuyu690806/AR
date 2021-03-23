@@ -1,0 +1,1 @@
+ffmpeg -i E:\video\caliber.mp4 -r 10 E:\video\photo\%03d.jpg

@@ -43,8 +43,8 @@ private slots:
 
 
 private:
-    mainscence * M_scence1=NULL;
-    personal_inf * p_infscence=NULL;
+    mainscence * M_scence1;
+    personal_inf * p_infscence;
     QString job;
     QString user_name;
     QString job_num;

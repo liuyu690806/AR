@@ -10,6 +10,7 @@
 #include "vedio_query.h"
 #include "personal_inf.h"
 #include "user_management.h"
+#include <QCloseEvent>
 #pragma execution_character_set("utf-8")
 namespace Ui {
 class mainscence;
@@ -24,6 +25,8 @@ public:
     ~mainscence();
     //屏幕大小
      QRect screenRect;
+     void closeEvent(QCloseEvent *event);    // 重写closeEvent的申明
+
 
 
 signals:
@@ -50,6 +53,7 @@ private:
     QString job;
     //场景
     QString scence;
+
 
 
 

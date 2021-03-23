@@ -22,10 +22,17 @@ public:
     QString break_down_choice(QString);
     //
     void clearUI();
+    //获得主编号
+    QString get_mainID(QString,QString,QString);
+    //修改文本
+    void modify_text();
     //结构表
     void structure_Tree(QString root, QTreeWidgetItem *item);  //后续递归调用，插入到父亲节点
     void structure_Tree(QTreeWidget *tree);       //第一次插入，根节点，最高级部门
     void structure_Tree_produce(QString root, QTreeWidgetItem *item);
+    void structure_Tree_imgandspare(QString root, QTreeWidgetItem *item);
+    //零件，图片信息的创建
+    void search_create_imgspare();
 
 
 public slots:
@@ -37,6 +44,18 @@ public slots:
     void combobox_valuechanged(QString);
     //tree对象选择
     void selectitems(QTreeWidgetItem * ,int);
+    //文件选择
+    void choosefile();
+    //增加图片及零件选项
+    void additems_img_spare();
+    //删除图片及零件
+    void de_img_spare();
+    //绘图及显示模型
+    void paint_img_spare(QString);
+    //table显示
+    void tableshow();
+
+
 
 
 private:
@@ -44,6 +63,7 @@ private:
     bool Object;
     bool Part;
     bool Produce;
+
 };
 
 #endif // MASK_MANAGEMENT_H

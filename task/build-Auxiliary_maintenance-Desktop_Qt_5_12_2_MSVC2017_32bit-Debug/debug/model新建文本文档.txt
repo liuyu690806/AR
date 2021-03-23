@@ -1,0 +1,80 @@
+USE `students`;
+
+CREATE TABLE assembly(
+       object VARCHAR(10),
+       ID VARCHAR(10)    
+)
+
+INSERT INTO assembly 
+VALUES('减速器','1')
+,('发射单元','2');
+
+CREATE TABLE parts(
+       part_name VARCHAR(10),
+       part_ID  VARCHAR(10),
+       upper_ID VARCHAR(10)  
+)
+
+INSERT INTO parts
+VALUES('底座','1-1','1')
+,('齿轮轴','1-2','1')
+,('箱体','2-1','2')
+,('电磁铁','2-2','2')
+,('电源','2-3','2');
+
+CREATE TABLE produce(
+       produce_name VARCHAR(10),
+       produce_ID  VARCHAR(10),
+       root_ID VARCHAR(10),
+       upper_ID VARCHAR(10),
+       pro_text TEXT(100),
+       spare_name VARCHAR(10) 
+)
+
+
+INSERT INTO produce
+VALUES('安装底座','1-1-1','1','1-1','使用螺栓固定','螺栓')
+,('组装齿轮轴','1-2-1','1','1-2','安装齿轮','齿轮')
+,('安装齿轮轴','1-2-1','1','1-2','安装齿轮轴','齿轮轴')
+,('安装箱体','2-1-1','2','2-1','使用大头螺栓固定','大头螺栓')
+,('安装电磁铁','2-2-1','2','2-2','旋转电磁铁对准点位栓','螺栓')
+,('安装电源','2-3-1','2','2-3','插好排插','电源线');
+
+SELECT a.`object`,p.`part_name`
+FROM `assembly` a
+LEFT OUTER JOIN `parts` p
+ON a.`ID`=p.`upper_ID`
+WHERE a.`object`='减速器';
+
+
+
+use ar;
+CREATE TABLE assembly(
+       object VARCHAR(10),
+       ID VARCHAR(10)    
+)
+
+CREATE TABLE parts(
+       part_name VARCHAR(10),
+       part_ID  VARCHAR(10),
+       upper_ID VARCHAR(10)  
+)
+
+CREATE TABLE produce(
+       produce_name VARCHAR(10),
+       produce_ID  VARCHAR(10),
+       root_ID VARCHAR(10),
+       upper_ID VARCHAR(10),
+       pro_text TEXT(100)
+)
+
+CREATE TABLE spare_parts(
+       sp_name VARCHAR(10),
+       root_ID VARCHAR(10),
+       sp_upper_ID VARCHAR(10),
+       model VARCHAR(30),
+       image varchar(30)
+       
+)
+
+drop table assembly;

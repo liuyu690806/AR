@@ -64,9 +64,6 @@ mainscence::mainscence(QWidget *parent) :
      ui->label_recent->setFixedSize(ui->widget_left->width(),45);
      ui->label_recent->setFont(QFont("微软雅黑",12,QFont::Bold));
      ui->label_recent->setStyleSheet("QLabel{ color:white; height:45px;  background-color:rgb(0,0,0,200);}");
-
-
-
 }
 
 
@@ -313,12 +310,21 @@ void mainscence::get_modify_personal_inf(QString str)
    //qDebug()<<"执行了";
 }
 
+// 重写closeEvent: 确认退出对话框
+void mainscence::closeEvent(QCloseEvent *event)
+{
+    QMessageBox::StandardButton button;
+    button=QMessageBox::question(this,tr("退出程序"),QString(tr("确认退出增强现实维修系统?")),QMessageBox::Yes|QMessageBox::No);
+    if(button==QMessageBox::No)
+    {
+        event->ignore(); // 忽略退出信号，程序继续进行
+    }
+    else if(button==QMessageBox::Yes)
+    {
+        event->accept(); // 接受退出信号，程序退出
+    }
+}
 mainscence::~mainscence()
 {
     delete ui;
-    delete m_maskscence;
-    delete m_managescence;
-    delete p_infscence;
-    delete v_queryscence;
-    delete u_managescence;
 }
