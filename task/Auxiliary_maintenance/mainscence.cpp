@@ -19,7 +19,8 @@ mainscence::mainscence(QWidget *parent) :
      //默认最大化
      QDesktopWidget * desktopWidget=QApplication::desktop();
      screenRect=desktopWidget->screenGeometry();
-     this->setFixedSize(screenRect.width(),screenRect.height());
+     //this->setFixedSize(screenRect.width(),screenRect.height());
+     setWindowState(Qt::WindowMaximized);
      //菜单栏
      ui->menubar->setStyleSheet("QMenuBar{background-color:rgb(200,200,200);}");
      ui->menubar->setParent(this);
