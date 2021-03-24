@@ -97,3 +97,5 @@ else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/opencv4.3.0/x86/vc16/li
 
 INCLUDEPATH += $$PWD/opencv4.3.0/include
 DEPENDPATH += $$PWD/opencv4.3.0/include
+
+

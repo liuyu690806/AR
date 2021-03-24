@@ -6,7 +6,7 @@ myopengl::myopengl(QWidget *parent)
     , m_ebo(QOpenGLBuffer::IndexBuffer)
 {
 
-        cam.open(0);
+        cam.open(700);
         clk.start(60);
         QObject::connect(&clk,&QTimer::timeout,[=](){
             this->updateWindow();
@@ -92,7 +92,7 @@ void myopengl::initializeGL()
     shaderProgram.addShaderFromSourceFile(QOpenGLShader::Vertex,":/model.vert");
     shaderProgram.addShaderFromSourceFile(QOpenGLShader::Fragment,":/model.frag");
     shaderProgram.link();
-    model = Model::createModel("C:/Users/ruanqiao/Desktop/ProjectCode/05_qtAssimp/model/DaChiLun.obj",context(),&shaderProgram);
+    model = Model::createModel("E:/C++-Test/AR_Demo_02/Debug/model/xiangti.obj",context(),&shaderProgram);
     //-----------------------------------------------------------------------------------------------------------------------------
     //初始化相机
     buildProjectionMat(0.01f,1000.0f);
