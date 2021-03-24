@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui multimedia multimediawidgets sql
+QT       += core gui multimedia multimediawidgets sql opengl
+LIBS+=-lopengl32 -lglu32
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -40,7 +41,11 @@ SOURCES += \
     mycombobox.cpp \
     mypushbutton1.cpp \
     myinterface.cpp \
-    mycombobox.cpp
+    mycombobox.cpp \
+    myopengl.cpp \
+    mesh.cpp \
+    camera.cpp \
+    model.cpp
 
 HEADERS += \
         sign_in.h \
@@ -57,7 +62,11 @@ HEADERS += \
     mycombobox.h \
     mypushbutton1.h \
     myinterface.h \
-    mycombobox.h
+    mycombobox.h \
+    myopengl.h \
+    mesh.h \
+    camera.h \
+    model.h
 
 FORMS += \
         sign_in.ui \
@@ -75,3 +84,16 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     res.qrc
+
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/assimp5.1/release/ -lassimp-vc141-mtd
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/assimp5.1/debug/ -lassimp-vc141-mtd
+
+INCLUDEPATH += $$PWD/assimp5.1/include
+DEPENDPATH += $$PWD/assimp5.1/include
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/opencv4.3.0/x86/vc16/lib/ -lopencv_world430
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/opencv4.3.0/x86/vc16/lib/ -lopencv_world430d
+
+INCLUDEPATH += $$PWD/opencv4.3.0/include
+DEPENDPATH += $$PWD/opencv4.3.0/include

@@ -3,5 +3,9 @@
         <file>IMG/sign_in.png</file>
         <file>IMG/logo.png</file>
         <file>IMG/2.png</file>
+        <file>model.frag</file>
+        <file>model.vert</file>
+        <file>video.frag</file>
+        <file>video.vert</file>
     </qresource>
 </RCC>

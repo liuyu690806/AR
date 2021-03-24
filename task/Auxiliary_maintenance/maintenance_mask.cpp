@@ -24,6 +24,7 @@ maintenance_mask::maintenance_mask(QWidget *parent) :
     //计时器
     ui->timeEdit->setFixedSize(200,40);
     ui->timeEdit->move(885,835);
+    ui->btn_openCam->move(800,835);
 
     ui->verticalLayoutWidget_5->move(1120,5);
     ui->verticalLayoutWidget_5->setFixedSize(420,900);
@@ -42,3 +43,8 @@ maintenance_mask::~maintenance_mask()
 {
     delete ui;
 }
+
+//void maintenance_mask::on_btn_openCam_clicked()
+//{
+//    emit is_opencamera();
+//}

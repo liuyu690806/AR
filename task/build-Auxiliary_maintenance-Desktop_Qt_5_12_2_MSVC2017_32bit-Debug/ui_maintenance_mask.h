@@ -25,6 +25,7 @@
 #include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <myopengl.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -32,7 +33,7 @@ class Ui_maintenance_mask
 {
 public:
     QTimeEdit *timeEdit;
-    QWidget *widget_vedio;
+    myopengl *widget_vedio;
     QWidget *verticalLayoutWidget_5;
     QVBoxLayout *verticalLayout_5;
     QHBoxLayout *horizontalLayout_2;
@@ -67,6 +68,7 @@ public:
     QTextEdit *textEdit;
     QPushButton *btn_submit;
     QTreeWidget *treeWidget;
+    QPushButton *btn_openCam;
 
     void setupUi(QWidget *maintenance_mask)
     {
@@ -76,12 +78,12 @@ public:
         timeEdit = new QTimeEdit(maintenance_mask);
         timeEdit->setObjectName(QString::fromUtf8("timeEdit"));
         timeEdit->setGeometry(QRect(50, 580, 118, 22));
-        widget_vedio = new QWidget(maintenance_mask);
+        widget_vedio = new myopengl(maintenance_mask);
         widget_vedio->setObjectName(QString::fromUtf8("widget_vedio"));
-        widget_vedio->setGeometry(QRect(30, 30, 81, 531));
+        widget_vedio->setGeometry(QRect(80, 10, 211, 531));
         verticalLayoutWidget_5 = new QWidget(maintenance_mask);
         verticalLayoutWidget_5->setObjectName(QString::fromUtf8("verticalLayoutWidget_5"));
-        verticalLayoutWidget_5->setGeometry(QRect(410, 332, 542, 461));
+        verticalLayoutWidget_5->setGeometry(QRect(410, 332, 542, 465));
         verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_5);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -271,6 +273,9 @@ public:
 
         verticalLayout_5->addLayout(verticalLayout_2);
 
+        btn_openCam = new QPushButton(maintenance_mask);
+        btn_openCam->setObjectName(QString::fromUtf8("btn_openCam"));
+        btn_openCam->setGeometry(QRect(0, 740, 93, 28));
 
         retranslateUi(maintenance_mask);
 
@@ -297,6 +302,7 @@ public:
         LB_assembly_name->setText(QString());
         LB_vedio_name->setText(QApplication::translate("maintenance_mask", "\350\247\206\351\242\221\345\220\215\347\247\260\357\274\232", nullptr));
         btn_submit->setText(QApplication::translate("maintenance_mask", "  \346\217\220\344\272\244", nullptr));
+        btn_openCam->setText(QApplication::translate("maintenance_mask", " \345\274\200\345\220\257\346\221\204\345\203\217\345\244\264", nullptr));
     } // retranslateUi
 
 };

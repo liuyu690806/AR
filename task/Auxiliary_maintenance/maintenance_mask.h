@@ -16,8 +16,12 @@ class maintenance_mask : public QWidget
 public:
     explicit maintenance_mask(QWidget *parent = nullptr);
     ~maintenance_mask();
+signals:
+    //void is_opencamera();
 
 
+private slots:
+    //void on_btn_openCam_clicked();
 
 private:
     Ui::maintenance_mask *ui;

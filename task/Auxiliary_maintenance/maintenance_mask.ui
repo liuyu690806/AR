@@ -23,12 +23,12 @@
     </rect>
    </property>
   </widget>
-  <widget class="QWidget" name="widget_vedio" native="true">
+  <widget class="myopengl" name="widget_vedio" native="true">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>30</y>
-     <width>81</width>
+     <x>80</x>
+     <y>10</y>
+     <width>211</width>
      <height>531</height>
     </rect>
    </property>
@@ -39,7 +39,7 @@
      <x>410</x>
      <y>332</y>
      <width>542</width>
-     <height>461</height>
+     <height>465</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -294,7 +294,28 @@
     </item>
    </layout>
   </widget>
+  <widget class="QPushButton" name="btn_openCam">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>740</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string> 开启摄像头</string>
+   </property>
+  </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>myopengl</class>
+   <extends>QWidget</extends>
+   <header location="global">myopengl.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
